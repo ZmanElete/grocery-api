@@ -13,6 +13,7 @@ class ListViewSet(ModelViewSet):
   @action(detail=False, methods=['post'])
   def filtered_list(self, request):
     user = request.user
+
     filters = {
       "household": user.household,
     }
