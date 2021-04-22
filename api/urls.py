@@ -11,6 +11,7 @@ from . import views
 router = routers.DefaultRouter()
 router.register('list', views.ListViewSet, basename='list')
 router.register('user', views.UserViewSet, basename='user')
+router.register('measurement', views.MeasurementViewset, basename='measurement')
 
 urlpatterns = [
   # Rest SimpleJWT endpoints

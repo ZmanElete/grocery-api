@@ -4,20 +4,24 @@ from api.symbol.admin import SymbolInline
 class MeasurementAdmin(nested_admin.NestedModelAdmin):
   list_display = (
     'title',
+    'form',
+    'family',
     'conversion',
     'convertable',
     'is_fraction',
   )
   search_fields = (
     'title',
-    'conversion',
-    'convertable',
-    'is_fraction',
   )
-  list_filer = (
+  list_filter = (
+    'family',
+    'form',
     'convertable',
     'is_fraction',
   )
   inlines = (
     SymbolInline,
+  )
+  raw_id_fields = (
+      'family',
   )
