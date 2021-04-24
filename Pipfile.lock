@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0a5f62860ead0120d1875019e149f4974b6e9838fabdbd4e49d1381e17f1a6bf"
+            "sha256": "76467aa4643527d1d76438ab7438de7a72e62fbb30ad66fbad94b1d0f87ce023"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -32,19 +32,19 @@
         },
         "django-nested-admin": {
             "hashes": [
-                "sha256:440d06055d5c114b354c6bbd040ab878a1bfbea02692cb40ec8fd1e5a071e99b",
-                "sha256:f1773c4d1be0a19e4b7a510734e88b81f551f831ed7b0641f63ad13cef3ee08c"
+                "sha256:93c83280c29d355cd187ff0394cf563517e2634788c8abbfa6159407cc5d7b21",
+                "sha256:ded1823d25b22150d0b6c3422ededb9e9eec668570222bc23a8e07716515e5be"
             ],
             "index": "pypi",
-            "version": "==3.3.3"
+            "version": "==3.2.3"
         },
         "djangorestframework": {
             "hashes": [
-                "sha256:0209bafcb7b5010fdfec784034f059d512256424de2a0f084cb82b096d6dd6a7",
-                "sha256:0898182b4737a7b584a2c73735d89816343369f259fea932d90dc78e35d8ac33"
+                "sha256:05809fc66e1c997fd9a32ea5730d9f4ba28b109b9da71fccfa5ff241201fd0a4",
+                "sha256:e782087823c47a26826ee5b6fa0c542968219263fb3976ec3c31edab23a4001f"
             ],
             "index": "pypi",
-            "version": "==3.12.2"
+            "version": "==3.11.0"
         },
         "djangorestframework-simplejwt": {
             "hashes": [
