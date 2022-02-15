@@ -1,19 +1,42 @@
 FROM python:3.8-buster
 
-WORKDIR /piptmp
+# system environment
+ENV PYTHONUNBUFFERED=1 \
+    PROJECT_ROOT=/opt/api \
+    PROJECT_DIR=/opt/api \
+    VIRTUAL_ENV=/opt/api/api_py38 \
+    LANG=en_US.UTF-8 \
+    LANGUAGE=en_US:en \
+    LC_ALL=en_US.UTF-8 \
+    PIPENV_VERBOSITY=-1 \
+    PATH="/opt/api/api_py38/bin:$PATH"
 
+# install system dependencies
 RUN apt-get update \
-    && apt-get install -y vim
-RUN pip install pipenv
-RUN export SHELL='/bin/bash'
+    && apt-get install -y \
+        locales \
+        vim
 
-ENV VIRTUAL_ENV /bin/env
-RUN mkdir -p /bin/env
+RUN apt clean
 
-COPY Pipfile* ./
+# configure locale
+RUN sed -i -e 's/# \(en_US\.UTF-8 .*\)/\1/' /etc/locale.gen \
+    && locale-gen
 
-RUN pipenv install --dev
+# python setup
+RUN pip install --upgrade pip wheel pipenv
 
-WORKDIR /usr/src/api
+# project skeleton
+RUN mkdir -p $PROJECT_ROOT/api/docker_bootstrap \
+    && mkdir -p $VIRTUAL_ENV
 
-ENTRYPOINT ./dev-entrypoint.sh
+# shell preferences
+RUN ( \
+    export SHELL='/bin/bash' \
+    && echo 'alias ll="ls -alF"' >> ~/.bashrc \
+)
+
+WORKDIR /opt/app/api
+COPY docker_bootstrap docker_bootstrap
+
+ENTRYPOINT docker_bootstrap/mkvirtualenv && docker_bootstrap/start

@@ -15,7 +15,8 @@ from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
+SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
 AUTH_USER_MODEL = 'api.GUser'
 
@@ -80,11 +81,12 @@ WSGI_APPLICATION = 'grocery_api.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env.get('POSTGRES_DB', 'grocery_DB'),
-        'USER': env.get('POSTGRES_USER', 'grocery_user'),
-        'PASSWORD': env.get('POSTGRES_PASSWORD', 'grocery_password'),
-        'HOST': env.get('POSTGRES_HOST', 'db'),
+        'ENGINE':   'django.db.backends.postgresql',
+        'HOST':     env.get('RW_DB_HOST')     or env.get('DB_HOST') or 'db',
+        'PORT':     env.get('RW_DB_PORT')     or 5432,
+        'USER':     env.get('RW_DB_USER')     or env.get('POSTGRES_USER'),
+        'PASSWORD': env.get('RW_DB_PASSWORD') or env.get('POSTGRES_PASSWORD'),
+        'NAME':     env.get('RW_DB_NAME')     or env.get('POSTGRES_DB'),
     }
 }
 
@@ -126,6 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #
 # REST Framework configuration

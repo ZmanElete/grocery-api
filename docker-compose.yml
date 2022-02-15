@@ -1,45 +1,61 @@
-version: '3.8'
+version: '3'
+
 
 services:
   db:
     image: postgres
-    restart: always
+
+    restart: unless-stopped
+
     environment:
-      - POSTGRES_DB
-      - POSTGRES_USER
-      - POSTGRES_PASSWORD
+        POSTGRES_DB: ${POSTGRES_DB}
+        POSTGRES_USER: ${POSTGRES_USER}
+        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
     ports:
-      - "5432:5432"
+      - "${HOST_DB_BINDING:-5432}:5432"
+
     volumes:
-      # Persist Data
-      - /var/lib/postgresql/data
+      # Persist database state between docker sessions/builds
+      - rdb:/var/lib/postgresql/data
+
       # Database initialized from database dumps
-      - ./database-init:/docker-entrypoint-initdb.d
+      - ./database-init:/docker-entrypoint-initdb.d/:ro
+
 
   api:
+    image: api:latest
+
     build:
       context: .
+
+    # command:
+    #     docker_bootstrap/start
+
+    # entrypoint: bash
     env_file: .env
-    environment:
-      - POSTGRES_DB
-      - POSTGRES_USER
-      - POSTGRES_PASSWORD
-      - POSTGRES_HOST
-      - DJANGO_DEBUG
-      - DJANGO_ALLOWED_HOST
-    working_dir: /usr/src/api
+
     volumes:
-      - ./:/usr/src/api
-      - ./logs:/var/log/elios/
-      - packages:/usr/local/lib/python3.7/site-packages/
+      - ./:/opt/app/api
+      - ../images:/opt/app/images
+      - venv_py38:/opt/app/api_py38
+
     ports:
-      - "3000:3000"
-      - "8000:8000"
-    links:
-      - db
+      - "${HOST_API_BINDING:-8300}:8000"
+      - "${HOST_DEBUGGER_BINDING}:3000"
+
     depends_on:
       - db
+
+    # seeding does not allow the entrypoint to complete, so the build fails, restart will make sure it tries again to
+    # connect.
+    restart: unless-stopped
+
     stdin_open: true
+
     tty: true
+
+
 volumes:
-  packages:
+    rdb:
+    venv_py38:

@@ -11,4 +11,4 @@ psycopg2-binary = "==2.8.5"
 django-nested-admin = "==3.2.3"
 
 [dev-packages]
-ptvsd = "*"
+debugpy = "*"

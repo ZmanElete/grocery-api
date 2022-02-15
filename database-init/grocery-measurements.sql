@@ -19,12 +19,12 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 
-ALTER SCHEMA public OWNER TO grocery_user;
+ALTER SCHEMA public OWNER TO postgres;
 
 --
 -- TOC entry 3110 (class 0 OID 0)
 -- Dependencies: 3
--- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: grocery_user
+-- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: postgres
 --
 
 COMMENT ON SCHEMA public IS 'standard public schema';
@@ -34,7 +34,7 @@ SET default_tablespace = '';
 
 --
 -- TOC entry 196 (class 1259 OID 16385)
--- Name: api_guser; Type: TABLE; Schema: public; Owner: grocery_user
+-- Name: api_guser; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.api_guser (
@@ -52,11 +52,11 @@ CREATE TABLE public.api_guser (
 );
 
 
-ALTER TABLE public.api_guser OWNER TO grocery_user;
+ALTER TABLE public.api_guser OWNER TO postgres;
 
 --
 -- TOC entry 197 (class 1259 OID 16391)
--- Name: api_guser_groups; Type: TABLE; Schema: public; Owner: grocery_user
+-- Name: api_guser_groups; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.api_guser_groups (
@@ -66,11 +66,11 @@ CREATE TABLE public.api_guser_groups (
 );
 
 
-ALTER TABLE public.api_guser_groups OWNER TO grocery_user;
+ALTER TABLE public.api_guser_groups OWNER TO postgres;
 
 --
 -- TOC entry 198 (class 1259 OID 16394)
--- Name: api_guser_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: grocery_user
+-- Name: api_guser_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.api_guser_groups_id_seq
@@ -82,12 +82,12 @@ CREATE SEQUENCE public.api_guser_groups_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.api_guser_groups_id_seq OWNER TO grocery_user;
+ALTER TABLE public.api_guser_groups_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 3111 (class 0 OID 0)
 -- Dependencies: 198
--- Name: api_guser_groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: grocery_user
+-- Name: api_guser_groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.api_guser_groups_id_seq OWNED BY public.api_guser_groups.id;
@@ -95,7 +95,7 @@ ALTER SEQUENCE public.api_guser_groups_id_seq OWNED BY public.api_guser_groups.i
 
 --
 -- TOC entry 199 (class 1259 OID 16396)
--- Name: api_guser_id_seq; Type: SEQUENCE; Schema: public; Owner: grocery_user
+-- Name: api_guser_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.api_guser_id_seq
@@ -107,12 +107,12 @@ CREATE SEQUENCE public.api_guser_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.api_guser_id_seq OWNER TO grocery_user;
+ALTER TABLE public.api_guser_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 3112 (class 0 OID 0)
 -- Dependencies: 199
--- Name: api_guser_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: grocery_user
+-- Name: api_guser_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.api_guser_id_seq OWNED BY public.api_guser.id;
@@ -120,7 +120,7 @@ ALTER SEQUENCE public.api_guser_id_seq OWNED BY public.api_guser.id;
 
 --
 -- TOC entry 200 (class 1259 OID 16398)
--- Name: api_guser_user_permissions; Type: TABLE; Schema: public; Owner: grocery_user
+-- Name: api_guser_user_permissions; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.api_guser_user_permissions (
@@ -130,11 +130,11 @@ CREATE TABLE public.api_guser_user_permissions (
 );
 
 
-ALTER TABLE public.api_guser_user_permissions OWNER TO grocery_user;
+ALTER TABLE public.api_guser_user_permissions OWNER TO postgres;
 
 --
 -- TOC entry 201 (class 1259 OID 16401)
--- Name: api_guser_user_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: grocery_user
+-- Name: api_guser_user_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.api_guser_user_permissions_id_seq
@@ -146,12 +146,12 @@ CREATE SEQUENCE public.api_guser_user_permissions_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.api_guser_user_permissions_id_seq OWNER TO grocery_user;
+ALTER TABLE public.api_guser_user_permissions_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 3113 (class 0 OID 0)
 -- Dependencies: 201
--- Name: api_guser_user_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: grocery_user
+-- Name: api_guser_user_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.api_guser_user_permissions_id_seq OWNED BY public.api_guser_user_permissions.id;
@@ -159,7 +159,7 @@ ALTER SEQUENCE public.api_guser_user_permissions_id_seq OWNED BY public.api_guse
 
 --
 -- TOC entry 202 (class 1259 OID 16403)
--- Name: api_household; Type: TABLE; Schema: public; Owner: grocery_user
+-- Name: api_household; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.api_household (
@@ -168,11 +168,11 @@ CREATE TABLE public.api_household (
 );
 
 
-ALTER TABLE public.api_household OWNER TO grocery_user;
+ALTER TABLE public.api_household OWNER TO postgres;
 
 --
 -- TOC entry 203 (class 1259 OID 16406)
--- Name: api_item; Type: TABLE; Schema: public; Owner: grocery_user
+-- Name: api_item; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.api_item (
@@ -184,11 +184,11 @@ CREATE TABLE public.api_item (
 );
 
 
-ALTER TABLE public.api_item OWNER TO grocery_user;
+ALTER TABLE public.api_item OWNER TO postgres;
 
 --
 -- TOC entry 204 (class 1259 OID 16409)
--- Name: api_item_id_seq; Type: SEQUENCE; Schema: public; Owner: grocery_user
+-- Name: api_item_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.api_item_id_seq
@@ -200,12 +200,12 @@ CREATE SEQUENCE public.api_item_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.api_item_id_seq OWNER TO grocery_user;
+ALTER TABLE public.api_item_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 3114 (class 0 OID 0)
 -- Dependencies: 204
--- Name: api_item_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: grocery_user
+-- Name: api_item_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.api_item_id_seq OWNED BY public.api_item.id;
@@ -213,7 +213,7 @@ ALTER SEQUENCE public.api_item_id_seq OWNED BY public.api_item.id;
 
 --
 -- TOC entry 205 (class 1259 OID 16411)
--- Name: api_list; Type: TABLE; Schema: public; Owner: grocery_user
+-- Name: api_list; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.api_list (
@@ -225,11 +225,11 @@ CREATE TABLE public.api_list (
 );
 
 
-ALTER TABLE public.api_list OWNER TO grocery_user;
+ALTER TABLE public.api_list OWNER TO postgres;
 
 --
 -- TOC entry 206 (class 1259 OID 16414)
--- Name: api_list_id_seq; Type: SEQUENCE; Schema: public; Owner: grocery_user
+-- Name: api_list_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.api_list_id_seq
@@ -241,12 +241,12 @@ CREATE SEQUENCE public.api_list_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.api_list_id_seq OWNER TO grocery_user;
+ALTER TABLE public.api_list_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 3115 (class 0 OID 0)
 -- Dependencies: 206
--- Name: api_list_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: grocery_user
+-- Name: api_list_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.api_list_id_seq OWNED BY public.api_list.id;
@@ -254,7 +254,7 @@ ALTER SEQUENCE public.api_list_id_seq OWNED BY public.api_list.id;
 
 --
 -- TOC entry 207 (class 1259 OID 16416)
--- Name: api_listsection; Type: TABLE; Schema: public; Owner: grocery_user
+-- Name: api_listsection; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.api_listsection (
@@ -265,11 +265,11 @@ CREATE TABLE public.api_listsection (
 );
 
 
-ALTER TABLE public.api_listsection OWNER TO grocery_user;
+ALTER TABLE public.api_listsection OWNER TO postgres;
 
 --
 -- TOC entry 208 (class 1259 OID 16419)
--- Name: api_listsection_id_seq; Type: SEQUENCE; Schema: public; Owner: grocery_user
+-- Name: api_listsection_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.api_listsection_id_seq
@@ -281,12 +281,12 @@ CREATE SEQUENCE public.api_listsection_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.api_listsection_id_seq OWNER TO grocery_user;
+ALTER TABLE public.api_listsection_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 3116 (class 0 OID 0)
 -- Dependencies: 208
--- Name: api_listsection_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: grocery_user
+-- Name: api_listsection_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.api_listsection_id_seq OWNED BY public.api_listsection.id;
@@ -294,7 +294,7 @@ ALTER SEQUENCE public.api_listsection_id_seq OWNED BY public.api_listsection.id;
 
 --
 -- TOC entry 209 (class 1259 OID 16421)
--- Name: api_measurement; Type: TABLE; Schema: public; Owner: grocery_user
+-- Name: api_measurement; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.api_measurement (
@@ -308,11 +308,11 @@ CREATE TABLE public.api_measurement (
 );
 
 
-ALTER TABLE public.api_measurement OWNER TO grocery_user;
+ALTER TABLE public.api_measurement OWNER TO postgres;
 
 --
 -- TOC entry 210 (class 1259 OID 16424)
--- Name: api_measurement_id_seq; Type: SEQUENCE; Schema: public; Owner: grocery_user
+-- Name: api_measurement_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.api_measurement_id_seq
@@ -324,12 +324,12 @@ CREATE SEQUENCE public.api_measurement_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.api_measurement_id_seq OWNER TO grocery_user;
+ALTER TABLE public.api_measurement_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 3117 (class 0 OID 0)
 -- Dependencies: 210
--- Name: api_measurement_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: grocery_user
+-- Name: api_measurement_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.api_measurement_id_seq OWNED BY public.api_measurement.id;
@@ -337,7 +337,7 @@ ALTER SEQUENCE public.api_measurement_id_seq OWNED BY public.api_measurement.id;
 
 --
 -- TOC entry 211 (class 1259 OID 16426)
--- Name: api_measurementfamily; Type: TABLE; Schema: public; Owner: grocery_user
+-- Name: api_measurementfamily; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.api_measurementfamily (
@@ -346,11 +346,11 @@ CREATE TABLE public.api_measurementfamily (
 );
 
 
-ALTER TABLE public.api_measurementfamily OWNER TO grocery_user;
+ALTER TABLE public.api_measurementfamily OWNER TO postgres;
 
 --
 -- TOC entry 212 (class 1259 OID 16429)
--- Name: api_measurementfamily_id_seq; Type: SEQUENCE; Schema: public; Owner: grocery_user
+-- Name: api_measurementfamily_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.api_measurementfamily_id_seq
@@ -362,12 +362,12 @@ CREATE SEQUENCE public.api_measurementfamily_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.api_measurementfamily_id_seq OWNER TO grocery_user;
+ALTER TABLE public.api_measurementfamily_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 3118 (class 0 OID 0)
 -- Dependencies: 212
--- Name: api_measurementfamily_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: grocery_user
+-- Name: api_measurementfamily_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.api_measurementfamily_id_seq OWNED BY public.api_measurementfamily.id;
@@ -375,7 +375,7 @@ ALTER SEQUENCE public.api_measurementfamily_id_seq OWNED BY public.api_measureme
 
 --
 -- TOC entry 213 (class 1259 OID 16431)
--- Name: api_recipe; Type: TABLE; Schema: public; Owner: grocery_user
+-- Name: api_recipe; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.api_recipe (
@@ -387,11 +387,11 @@ CREATE TABLE public.api_recipe (
 );
 
 
-ALTER TABLE public.api_recipe OWNER TO grocery_user;
+ALTER TABLE public.api_recipe OWNER TO postgres;
 
 --
 -- TOC entry 214 (class 1259 OID 16437)
--- Name: api_recipe_id_seq; Type: SEQUENCE; Schema: public; Owner: grocery_user
+-- Name: api_recipe_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.api_recipe_id_seq
@@ -403,12 +403,12 @@ CREATE SEQUENCE public.api_recipe_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.api_recipe_id_seq OWNER TO grocery_user;
+ALTER TABLE public.api_recipe_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 3119 (class 0 OID 0)
 -- Dependencies: 214
--- Name: api_recipe_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: grocery_user
+-- Name: api_recipe_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.api_recipe_id_seq OWNED BY public.api_recipe.id;
@@ -416,7 +416,7 @@ ALTER SEQUENCE public.api_recipe_id_seq OWNED BY public.api_recipe.id;
 
 --
 -- TOC entry 215 (class 1259 OID 16439)
--- Name: api_symbol; Type: TABLE; Schema: public; Owner: grocery_user
+-- Name: api_symbol; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.api_symbol (
@@ -426,11 +426,11 @@ CREATE TABLE public.api_symbol (
 );
 
 
-ALTER TABLE public.api_symbol OWNER TO grocery_user;
+ALTER TABLE public.api_symbol OWNER TO postgres;
 
 --
 -- TOC entry 216 (class 1259 OID 16442)
--- Name: api_symbol_id_seq; Type: SEQUENCE; Schema: public; Owner: grocery_user
+-- Name: api_symbol_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.api_symbol_id_seq
@@ -442,12 +442,12 @@ CREATE SEQUENCE public.api_symbol_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.api_symbol_id_seq OWNER TO grocery_user;
+ALTER TABLE public.api_symbol_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 3120 (class 0 OID 0)
 -- Dependencies: 216
--- Name: api_symbol_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: grocery_user
+-- Name: api_symbol_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.api_symbol_id_seq OWNED BY public.api_symbol.id;
@@ -455,7 +455,7 @@ ALTER SEQUENCE public.api_symbol_id_seq OWNED BY public.api_symbol.id;
 
 --
 -- TOC entry 217 (class 1259 OID 16444)
--- Name: auth_group; Type: TABLE; Schema: public; Owner: grocery_user
+-- Name: auth_group; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.auth_group (
@@ -464,11 +464,11 @@ CREATE TABLE public.auth_group (
 );
 
 
-ALTER TABLE public.auth_group OWNER TO grocery_user;
+ALTER TABLE public.auth_group OWNER TO postgres;
 
 --
 -- TOC entry 218 (class 1259 OID 16447)
--- Name: auth_group_id_seq; Type: SEQUENCE; Schema: public; Owner: grocery_user
+-- Name: auth_group_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.auth_group_id_seq
@@ -480,12 +480,12 @@ CREATE SEQUENCE public.auth_group_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_group_id_seq OWNER TO grocery_user;
+ALTER TABLE public.auth_group_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 3121 (class 0 OID 0)
 -- Dependencies: 218
--- Name: auth_group_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: grocery_user
+-- Name: auth_group_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.auth_group_id_seq OWNED BY public.auth_group.id;
@@ -493,7 +493,7 @@ ALTER SEQUENCE public.auth_group_id_seq OWNED BY public.auth_group.id;
 
 --
 -- TOC entry 219 (class 1259 OID 16449)
--- Name: auth_group_permissions; Type: TABLE; Schema: public; Owner: grocery_user
+-- Name: auth_group_permissions; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.auth_group_permissions (
@@ -503,11 +503,11 @@ CREATE TABLE public.auth_group_permissions (
 );
 
 
-ALTER TABLE public.auth_group_permissions OWNER TO grocery_user;
+ALTER TABLE public.auth_group_permissions OWNER TO postgres;
 
 --
 -- TOC entry 220 (class 1259 OID 16452)
--- Name: auth_group_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: grocery_user
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.auth_group_permissions_id_seq
@@ -519,12 +519,12 @@ CREATE SEQUENCE public.auth_group_permissions_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_group_permissions_id_seq OWNER TO grocery_user;
+ALTER TABLE public.auth_group_permissions_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 3122 (class 0 OID 0)
 -- Dependencies: 220
--- Name: auth_group_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: grocery_user
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.auth_group_permissions_id_seq OWNED BY public.auth_group_permissions.id;
@@ -532,7 +532,7 @@ ALTER SEQUENCE public.auth_group_permissions_id_seq OWNED BY public.auth_group_p
 
 --
 -- TOC entry 221 (class 1259 OID 16454)
--- Name: auth_permission; Type: TABLE; Schema: public; Owner: grocery_user
+-- Name: auth_permission; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.auth_permission (
@@ -543,11 +543,11 @@ CREATE TABLE public.auth_permission (
 );
 
 
-ALTER TABLE public.auth_permission OWNER TO grocery_user;
+ALTER TABLE public.auth_permission OWNER TO postgres;
 
 --
 -- TOC entry 222 (class 1259 OID 16457)
--- Name: auth_permission_id_seq; Type: SEQUENCE; Schema: public; Owner: grocery_user
+-- Name: auth_permission_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.auth_permission_id_seq
@@ -559,12 +559,12 @@ CREATE SEQUENCE public.auth_permission_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_permission_id_seq OWNER TO grocery_user;
+ALTER TABLE public.auth_permission_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 3123 (class 0 OID 0)
 -- Dependencies: 222
--- Name: auth_permission_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: grocery_user
+-- Name: auth_permission_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.auth_permission_id_seq OWNED BY public.auth_permission.id;
@@ -572,7 +572,7 @@ ALTER SEQUENCE public.auth_permission_id_seq OWNED BY public.auth_permission.id;
 
 --
 -- TOC entry 223 (class 1259 OID 16459)
--- Name: django_admin_log; Type: TABLE; Schema: public; Owner: grocery_user
+-- Name: django_admin_log; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.django_admin_log (
@@ -588,11 +588,11 @@ CREATE TABLE public.django_admin_log (
 );
 
 
-ALTER TABLE public.django_admin_log OWNER TO grocery_user;
+ALTER TABLE public.django_admin_log OWNER TO postgres;
 
 --
 -- TOC entry 224 (class 1259 OID 16466)
--- Name: django_admin_log_id_seq; Type: SEQUENCE; Schema: public; Owner: grocery_user
+-- Name: django_admin_log_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.django_admin_log_id_seq
@@ -604,12 +604,12 @@ CREATE SEQUENCE public.django_admin_log_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.django_admin_log_id_seq OWNER TO grocery_user;
+ALTER TABLE public.django_admin_log_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 3124 (class 0 OID 0)
 -- Dependencies: 224
--- Name: django_admin_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: grocery_user
+-- Name: django_admin_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.django_admin_log_id_seq OWNED BY public.django_admin_log.id;
@@ -617,7 +617,7 @@ ALTER SEQUENCE public.django_admin_log_id_seq OWNED BY public.django_admin_log.i
 
 --
 -- TOC entry 225 (class 1259 OID 16468)
--- Name: django_content_type; Type: TABLE; Schema: public; Owner: grocery_user
+-- Name: django_content_type; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.django_content_type (
@@ -627,11 +627,11 @@ CREATE TABLE public.django_content_type (
 );
 
 
-ALTER TABLE public.django_content_type OWNER TO grocery_user;
+ALTER TABLE public.django_content_type OWNER TO postgres;
 
 --
 -- TOC entry 226 (class 1259 OID 16471)
--- Name: django_content_type_id_seq; Type: SEQUENCE; Schema: public; Owner: grocery_user
+-- Name: django_content_type_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.django_content_type_id_seq
@@ -643,12 +643,12 @@ CREATE SEQUENCE public.django_content_type_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.django_content_type_id_seq OWNER TO grocery_user;
+ALTER TABLE public.django_content_type_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 3125 (class 0 OID 0)
 -- Dependencies: 226
--- Name: django_content_type_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: grocery_user
+-- Name: django_content_type_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.django_content_type_id_seq OWNED BY public.django_content_type.id;
@@ -656,7 +656,7 @@ ALTER SEQUENCE public.django_content_type_id_seq OWNED BY public.django_content_
 
 --
 -- TOC entry 227 (class 1259 OID 16473)
--- Name: django_migrations; Type: TABLE; Schema: public; Owner: grocery_user
+-- Name: django_migrations; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.django_migrations (
@@ -667,11 +667,11 @@ CREATE TABLE public.django_migrations (
 );
 
 
-ALTER TABLE public.django_migrations OWNER TO grocery_user;
+ALTER TABLE public.django_migrations OWNER TO postgres;
 
 --
 -- TOC entry 228 (class 1259 OID 16479)
--- Name: django_migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: grocery_user
+-- Name: django_migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.django_migrations_id_seq
@@ -683,12 +683,12 @@ CREATE SEQUENCE public.django_migrations_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.django_migrations_id_seq OWNER TO grocery_user;
+ALTER TABLE public.django_migrations_id_seq OWNER TO postgres;
 
 --
 -- TOC entry 3126 (class 0 OID 0)
 -- Dependencies: 228
--- Name: django_migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: grocery_user
+-- Name: django_migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.django_migrations_id_seq OWNED BY public.django_migrations.id;
@@ -696,7 +696,7 @@ ALTER SEQUENCE public.django_migrations_id_seq OWNED BY public.django_migrations
 
 --
 -- TOC entry 229 (class 1259 OID 16481)
--- Name: django_session; Type: TABLE; Schema: public; Owner: grocery_user
+-- Name: django_session; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.django_session (
@@ -706,11 +706,11 @@ CREATE TABLE public.django_session (
 );
 
 
-ALTER TABLE public.django_session OWNER TO grocery_user;
+ALTER TABLE public.django_session OWNER TO postgres;
 
 --
 -- TOC entry 2843 (class 2604 OID 16487)
--- Name: api_guser id; Type: DEFAULT; Schema: public; Owner: grocery_user
+-- Name: api_guser id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_guser ALTER COLUMN id SET DEFAULT nextval('public.api_guser_id_seq'::regclass);
@@ -718,7 +718,7 @@ ALTER TABLE ONLY public.api_guser ALTER COLUMN id SET DEFAULT nextval('public.ap
 
 --
 -- TOC entry 2844 (class 2604 OID 16488)
--- Name: api_guser_groups id; Type: DEFAULT; Schema: public; Owner: grocery_user
+-- Name: api_guser_groups id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_guser_groups ALTER COLUMN id SET DEFAULT nextval('public.api_guser_groups_id_seq'::regclass);
@@ -726,7 +726,7 @@ ALTER TABLE ONLY public.api_guser_groups ALTER COLUMN id SET DEFAULT nextval('pu
 
 --
 -- TOC entry 2845 (class 2604 OID 16489)
--- Name: api_guser_user_permissions id; Type: DEFAULT; Schema: public; Owner: grocery_user
+-- Name: api_guser_user_permissions id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_guser_user_permissions ALTER COLUMN id SET DEFAULT nextval('public.api_guser_user_permissions_id_seq'::regclass);
@@ -734,7 +734,7 @@ ALTER TABLE ONLY public.api_guser_user_permissions ALTER COLUMN id SET DEFAULT n
 
 --
 -- TOC entry 2846 (class 2604 OID 16490)
--- Name: api_item id; Type: DEFAULT; Schema: public; Owner: grocery_user
+-- Name: api_item id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_item ALTER COLUMN id SET DEFAULT nextval('public.api_item_id_seq'::regclass);
@@ -742,7 +742,7 @@ ALTER TABLE ONLY public.api_item ALTER COLUMN id SET DEFAULT nextval('public.api
 
 --
 -- TOC entry 2847 (class 2604 OID 16491)
--- Name: api_list id; Type: DEFAULT; Schema: public; Owner: grocery_user
+-- Name: api_list id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_list ALTER COLUMN id SET DEFAULT nextval('public.api_list_id_seq'::regclass);
@@ -750,7 +750,7 @@ ALTER TABLE ONLY public.api_list ALTER COLUMN id SET DEFAULT nextval('public.api
 
 --
 -- TOC entry 2848 (class 2604 OID 16492)
--- Name: api_listsection id; Type: DEFAULT; Schema: public; Owner: grocery_user
+-- Name: api_listsection id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_listsection ALTER COLUMN id SET DEFAULT nextval('public.api_listsection_id_seq'::regclass);
@@ -758,7 +758,7 @@ ALTER TABLE ONLY public.api_listsection ALTER COLUMN id SET DEFAULT nextval('pub
 
 --
 -- TOC entry 2849 (class 2604 OID 16493)
--- Name: api_measurement id; Type: DEFAULT; Schema: public; Owner: grocery_user
+-- Name: api_measurement id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_measurement ALTER COLUMN id SET DEFAULT nextval('public.api_measurement_id_seq'::regclass);
@@ -766,7 +766,7 @@ ALTER TABLE ONLY public.api_measurement ALTER COLUMN id SET DEFAULT nextval('pub
 
 --
 -- TOC entry 2850 (class 2604 OID 16494)
--- Name: api_measurementfamily id; Type: DEFAULT; Schema: public; Owner: grocery_user
+-- Name: api_measurementfamily id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_measurementfamily ALTER COLUMN id SET DEFAULT nextval('public.api_measurementfamily_id_seq'::regclass);
@@ -774,7 +774,7 @@ ALTER TABLE ONLY public.api_measurementfamily ALTER COLUMN id SET DEFAULT nextva
 
 --
 -- TOC entry 2851 (class 2604 OID 16495)
--- Name: api_recipe id; Type: DEFAULT; Schema: public; Owner: grocery_user
+-- Name: api_recipe id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_recipe ALTER COLUMN id SET DEFAULT nextval('public.api_recipe_id_seq'::regclass);
@@ -782,7 +782,7 @@ ALTER TABLE ONLY public.api_recipe ALTER COLUMN id SET DEFAULT nextval('public.a
 
 --
 -- TOC entry 2852 (class 2604 OID 16496)
--- Name: api_symbol id; Type: DEFAULT; Schema: public; Owner: grocery_user
+-- Name: api_symbol id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_symbol ALTER COLUMN id SET DEFAULT nextval('public.api_symbol_id_seq'::regclass);
@@ -790,7 +790,7 @@ ALTER TABLE ONLY public.api_symbol ALTER COLUMN id SET DEFAULT nextval('public.a
 
 --
 -- TOC entry 2853 (class 2604 OID 16497)
--- Name: auth_group id; Type: DEFAULT; Schema: public; Owner: grocery_user
+-- Name: auth_group id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.auth_group ALTER COLUMN id SET DEFAULT nextval('public.auth_group_id_seq'::regclass);
@@ -798,7 +798,7 @@ ALTER TABLE ONLY public.auth_group ALTER COLUMN id SET DEFAULT nextval('public.a
 
 --
 -- TOC entry 2854 (class 2604 OID 16498)
--- Name: auth_group_permissions id; Type: DEFAULT; Schema: public; Owner: grocery_user
+-- Name: auth_group_permissions id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.auth_group_permissions ALTER COLUMN id SET DEFAULT nextval('public.auth_group_permissions_id_seq'::regclass);
@@ -806,7 +806,7 @@ ALTER TABLE ONLY public.auth_group_permissions ALTER COLUMN id SET DEFAULT nextv
 
 --
 -- TOC entry 2855 (class 2604 OID 16499)
--- Name: auth_permission id; Type: DEFAULT; Schema: public; Owner: grocery_user
+-- Name: auth_permission id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.auth_permission ALTER COLUMN id SET DEFAULT nextval('public.auth_permission_id_seq'::regclass);
@@ -814,7 +814,7 @@ ALTER TABLE ONLY public.auth_permission ALTER COLUMN id SET DEFAULT nextval('pub
 
 --
 -- TOC entry 2856 (class 2604 OID 16500)
--- Name: django_admin_log id; Type: DEFAULT; Schema: public; Owner: grocery_user
+-- Name: django_admin_log id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.django_admin_log ALTER COLUMN id SET DEFAULT nextval('public.django_admin_log_id_seq'::regclass);
@@ -822,7 +822,7 @@ ALTER TABLE ONLY public.django_admin_log ALTER COLUMN id SET DEFAULT nextval('pu
 
 --
 -- TOC entry 2858 (class 2604 OID 16501)
--- Name: django_content_type id; Type: DEFAULT; Schema: public; Owner: grocery_user
+-- Name: django_content_type id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.django_content_type ALTER COLUMN id SET DEFAULT nextval('public.django_content_type_id_seq'::regclass);
@@ -830,7 +830,7 @@ ALTER TABLE ONLY public.django_content_type ALTER COLUMN id SET DEFAULT nextval(
 
 --
 -- TOC entry 2859 (class 2604 OID 16502)
--- Name: django_migrations id; Type: DEFAULT; Schema: public; Owner: grocery_user
+-- Name: django_migrations id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.django_migrations ALTER COLUMN id SET DEFAULT nextval('public.django_migrations_id_seq'::regclass);
@@ -839,7 +839,7 @@ ALTER TABLE ONLY public.django_migrations ALTER COLUMN id SET DEFAULT nextval('p
 --
 -- TOC entry 3071 (class 0 OID 16385)
 -- Dependencies: 196
--- Data for Name: api_guser; Type: TABLE DATA; Schema: public; Owner: grocery_user
+-- Data for Name: api_guser; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 INSERT INTO public.api_guser VALUES (1, 'pbkdf2_sha256$216000$U77Cvn2Gcpoa$TnGWTAoOcnIZN9Yh1X/2ZWq2lhJwvS4KqU1Z2R05xPI=', '2021-04-22 16:25:52.975166+00', true, '', '', true, true, '2021-04-20 20:59:00.771419+00', 'test@test.com', '5162747e-d6e1-4bfe-8fcf-c31740387231');
@@ -848,7 +848,7 @@ INSERT INTO public.api_guser VALUES (1, 'pbkdf2_sha256$216000$U77Cvn2Gcpoa$TnGWT
 --
 -- TOC entry 3072 (class 0 OID 16391)
 -- Dependencies: 197
--- Data for Name: api_guser_groups; Type: TABLE DATA; Schema: public; Owner: grocery_user
+-- Data for Name: api_guser_groups; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
@@ -856,7 +856,7 @@ INSERT INTO public.api_guser VALUES (1, 'pbkdf2_sha256$216000$U77Cvn2Gcpoa$TnGWT
 --
 -- TOC entry 3075 (class 0 OID 16398)
 -- Dependencies: 200
--- Data for Name: api_guser_user_permissions; Type: TABLE DATA; Schema: public; Owner: grocery_user
+-- Data for Name: api_guser_user_permissions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
@@ -864,7 +864,7 @@ INSERT INTO public.api_guser VALUES (1, 'pbkdf2_sha256$216000$U77Cvn2Gcpoa$TnGWT
 --
 -- TOC entry 3077 (class 0 OID 16403)
 -- Dependencies: 202
--- Data for Name: api_household; Type: TABLE DATA; Schema: public; Owner: grocery_user
+-- Data for Name: api_household; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 INSERT INTO public.api_household VALUES ('The ''s Household', '5162747e-d6e1-4bfe-8fcf-c31740387231');
@@ -873,7 +873,7 @@ INSERT INTO public.api_household VALUES ('The ''s Household', '5162747e-d6e1-4bf
 --
 -- TOC entry 3078 (class 0 OID 16406)
 -- Dependencies: 203
--- Data for Name: api_item; Type: TABLE DATA; Schema: public; Owner: grocery_user
+-- Data for Name: api_item; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
@@ -881,7 +881,7 @@ INSERT INTO public.api_household VALUES ('The ''s Household', '5162747e-d6e1-4bf
 --
 -- TOC entry 3080 (class 0 OID 16411)
 -- Dependencies: 205
--- Data for Name: api_list; Type: TABLE DATA; Schema: public; Owner: grocery_user
+-- Data for Name: api_list; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
@@ -889,7 +889,7 @@ INSERT INTO public.api_household VALUES ('The ''s Household', '5162747e-d6e1-4bf
 --
 -- TOC entry 3082 (class 0 OID 16416)
 -- Dependencies: 207
--- Data for Name: api_listsection; Type: TABLE DATA; Schema: public; Owner: grocery_user
+-- Data for Name: api_listsection; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
@@ -897,7 +897,7 @@ INSERT INTO public.api_household VALUES ('The ''s Household', '5162747e-d6e1-4bf
 --
 -- TOC entry 3084 (class 0 OID 16421)
 -- Dependencies: 209
--- Data for Name: api_measurement; Type: TABLE DATA; Schema: public; Owner: grocery_user
+-- Data for Name: api_measurement; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 INSERT INTO public.api_measurement VALUES (4, 'Quart', 189271000, true, true, 0, 3);
@@ -921,7 +921,7 @@ INSERT INTO public.api_measurement VALUES (18, 'Whole', 1, false, true, 0, 2);
 --
 -- TOC entry 3086 (class 0 OID 16426)
 -- Dependencies: 211
--- Data for Name: api_measurementfamily; Type: TABLE DATA; Schema: public; Owner: grocery_user
+-- Data for Name: api_measurementfamily; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 INSERT INTO public.api_measurementfamily VALUES (1, 'Metric');
@@ -932,7 +932,7 @@ INSERT INTO public.api_measurementfamily VALUES (3, 'US');
 --
 -- TOC entry 3088 (class 0 OID 16431)
 -- Dependencies: 213
--- Data for Name: api_recipe; Type: TABLE DATA; Schema: public; Owner: grocery_user
+-- Data for Name: api_recipe; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
@@ -940,7 +940,7 @@ INSERT INTO public.api_measurementfamily VALUES (3, 'US');
 --
 -- TOC entry 3090 (class 0 OID 16439)
 -- Dependencies: 215
--- Data for Name: api_symbol; Type: TABLE DATA; Schema: public; Owner: grocery_user
+-- Data for Name: api_symbol; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 INSERT INTO public.api_symbol VALUES (3, 'gal.', 3);
@@ -968,7 +968,7 @@ INSERT INTO public.api_symbol VALUES (22, 'kg', 17);
 --
 -- TOC entry 3092 (class 0 OID 16444)
 -- Dependencies: 217
--- Data for Name: auth_group; Type: TABLE DATA; Schema: public; Owner: grocery_user
+-- Data for Name: auth_group; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
@@ -976,7 +976,7 @@ INSERT INTO public.api_symbol VALUES (22, 'kg', 17);
 --
 -- TOC entry 3094 (class 0 OID 16449)
 -- Dependencies: 219
--- Data for Name: auth_group_permissions; Type: TABLE DATA; Schema: public; Owner: grocery_user
+-- Data for Name: auth_group_permissions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
@@ -984,7 +984,7 @@ INSERT INTO public.api_symbol VALUES (22, 'kg', 17);
 --
 -- TOC entry 3096 (class 0 OID 16454)
 -- Dependencies: 221
--- Data for Name: auth_permission; Type: TABLE DATA; Schema: public; Owner: grocery_user
+-- Data for Name: auth_permission; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 INSERT INTO public.auth_permission VALUES (1, 'Can add log entry', 1, 'add_logentry');
@@ -1048,7 +1048,7 @@ INSERT INTO public.auth_permission VALUES (56, 'Can view measurement family', 14
 --
 -- TOC entry 3098 (class 0 OID 16459)
 -- Dependencies: 223
--- Data for Name: django_admin_log; Type: TABLE DATA; Schema: public; Owner: grocery_user
+-- Data for Name: django_admin_log; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 INSERT INTO public.django_admin_log VALUES (1, '2021-04-21 22:32:30.361152+00', '1', 'Celsius', 1, '[{"added": {}}, {"added": {"name": "symbol", "object": "Symbol object (1)"}}]', 8, 1);
@@ -1084,7 +1084,7 @@ INSERT INTO public.django_admin_log VALUES (28, '2021-04-22 16:26:20.62487+00', 
 --
 -- TOC entry 3100 (class 0 OID 16468)
 -- Dependencies: 225
--- Data for Name: django_content_type; Type: TABLE DATA; Schema: public; Owner: grocery_user
+-- Data for Name: django_content_type; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 INSERT INTO public.django_content_type VALUES (1, 'admin', 'logentry');
@@ -1106,7 +1106,7 @@ INSERT INTO public.django_content_type VALUES (14, 'api', 'measurementfamily');
 --
 -- TOC entry 3102 (class 0 OID 16473)
 -- Dependencies: 227
--- Data for Name: django_migrations; Type: TABLE DATA; Schema: public; Owner: grocery_user
+-- Data for Name: django_migrations; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 INSERT INTO public.django_migrations VALUES (1, 'contenttypes', '0001_initial', '2021-04-20 20:58:42.120517+00');
@@ -1141,7 +1141,7 @@ INSERT INTO public.django_migrations VALUES (27, 'api', '0009_auto_20210421_2252
 --
 -- TOC entry 3104 (class 0 OID 16481)
 -- Dependencies: 229
--- Data for Name: django_session; Type: TABLE DATA; Schema: public; Owner: grocery_user
+-- Data for Name: django_session; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 INSERT INTO public.django_session VALUES ('qd6uu4tf1uojgfq5mapc1nz8k3iqv1it', '.eJxVjMsOwiAURP-FtSG84bp07zcQuBelaiAp7cr477ZJF7qcOWfmzWJalxrXUeY4ETszyU6_XU74LG0H9Ejt3jn2tsxT5rvCDzr4tVN5XQ7376CmUbc1EJInbTBoTwGtuCkDTmfrQXkFApQy3qLWFFzK3jot7BZlJjClSME-X8RLNsQ:1lZHvW:b_pOYZO3uuzp5Pb2kyUMdKiovm6PgwWvMNB-5rGIfQI', '2021-05-05 18:50:18.101651+00');
@@ -1151,7 +1151,7 @@ INSERT INTO public.django_session VALUES ('cejhwm8qrmsiyucqbk92b3x3a4jcje54', '.
 --
 -- TOC entry 3127 (class 0 OID 0)
 -- Dependencies: 198
--- Name: api_guser_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: grocery_user
+-- Name: api_guser_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.api_guser_groups_id_seq', 1, false);
@@ -1160,7 +1160,7 @@ SELECT pg_catalog.setval('public.api_guser_groups_id_seq', 1, false);
 --
 -- TOC entry 3128 (class 0 OID 0)
 -- Dependencies: 199
--- Name: api_guser_id_seq; Type: SEQUENCE SET; Schema: public; Owner: grocery_user
+-- Name: api_guser_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.api_guser_id_seq', 1, true);
@@ -1169,7 +1169,7 @@ SELECT pg_catalog.setval('public.api_guser_id_seq', 1, true);
 --
 -- TOC entry 3129 (class 0 OID 0)
 -- Dependencies: 201
--- Name: api_guser_user_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: grocery_user
+-- Name: api_guser_user_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.api_guser_user_permissions_id_seq', 1, false);
@@ -1178,7 +1178,7 @@ SELECT pg_catalog.setval('public.api_guser_user_permissions_id_seq', 1, false);
 --
 -- TOC entry 3130 (class 0 OID 0)
 -- Dependencies: 204
--- Name: api_item_id_seq; Type: SEQUENCE SET; Schema: public; Owner: grocery_user
+-- Name: api_item_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.api_item_id_seq', 1, false);
@@ -1187,7 +1187,7 @@ SELECT pg_catalog.setval('public.api_item_id_seq', 1, false);
 --
 -- TOC entry 3131 (class 0 OID 0)
 -- Dependencies: 206
--- Name: api_list_id_seq; Type: SEQUENCE SET; Schema: public; Owner: grocery_user
+-- Name: api_list_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.api_list_id_seq', 1, false);
@@ -1196,7 +1196,7 @@ SELECT pg_catalog.setval('public.api_list_id_seq', 1, false);
 --
 -- TOC entry 3132 (class 0 OID 0)
 -- Dependencies: 208
--- Name: api_listsection_id_seq; Type: SEQUENCE SET; Schema: public; Owner: grocery_user
+-- Name: api_listsection_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.api_listsection_id_seq', 1, false);
@@ -1205,7 +1205,7 @@ SELECT pg_catalog.setval('public.api_listsection_id_seq', 1, false);
 --
 -- TOC entry 3133 (class 0 OID 0)
 -- Dependencies: 210
--- Name: api_measurement_id_seq; Type: SEQUENCE SET; Schema: public; Owner: grocery_user
+-- Name: api_measurement_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.api_measurement_id_seq', 18, true);
@@ -1214,7 +1214,7 @@ SELECT pg_catalog.setval('public.api_measurement_id_seq', 18, true);
 --
 -- TOC entry 3134 (class 0 OID 0)
 -- Dependencies: 212
--- Name: api_measurementfamily_id_seq; Type: SEQUENCE SET; Schema: public; Owner: grocery_user
+-- Name: api_measurementfamily_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.api_measurementfamily_id_seq', 3, true);
@@ -1223,7 +1223,7 @@ SELECT pg_catalog.setval('public.api_measurementfamily_id_seq', 3, true);
 --
 -- TOC entry 3135 (class 0 OID 0)
 -- Dependencies: 214
--- Name: api_recipe_id_seq; Type: SEQUENCE SET; Schema: public; Owner: grocery_user
+-- Name: api_recipe_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.api_recipe_id_seq', 1, false);
@@ -1232,7 +1232,7 @@ SELECT pg_catalog.setval('public.api_recipe_id_seq', 1, false);
 --
 -- TOC entry 3136 (class 0 OID 0)
 -- Dependencies: 216
--- Name: api_symbol_id_seq; Type: SEQUENCE SET; Schema: public; Owner: grocery_user
+-- Name: api_symbol_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.api_symbol_id_seq', 22, true);
@@ -1241,7 +1241,7 @@ SELECT pg_catalog.setval('public.api_symbol_id_seq', 22, true);
 --
 -- TOC entry 3137 (class 0 OID 0)
 -- Dependencies: 218
--- Name: auth_group_id_seq; Type: SEQUENCE SET; Schema: public; Owner: grocery_user
+-- Name: auth_group_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.auth_group_id_seq', 1, false);
@@ -1250,7 +1250,7 @@ SELECT pg_catalog.setval('public.auth_group_id_seq', 1, false);
 --
 -- TOC entry 3138 (class 0 OID 0)
 -- Dependencies: 220
--- Name: auth_group_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: grocery_user
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.auth_group_permissions_id_seq', 1, false);
@@ -1259,7 +1259,7 @@ SELECT pg_catalog.setval('public.auth_group_permissions_id_seq', 1, false);
 --
 -- TOC entry 3139 (class 0 OID 0)
 -- Dependencies: 222
--- Name: auth_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: grocery_user
+-- Name: auth_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.auth_permission_id_seq', 56, true);
@@ -1268,7 +1268,7 @@ SELECT pg_catalog.setval('public.auth_permission_id_seq', 56, true);
 --
 -- TOC entry 3140 (class 0 OID 0)
 -- Dependencies: 224
--- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: grocery_user
+-- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.django_admin_log_id_seq', 28, true);
@@ -1277,7 +1277,7 @@ SELECT pg_catalog.setval('public.django_admin_log_id_seq', 28, true);
 --
 -- TOC entry 3141 (class 0 OID 0)
 -- Dependencies: 226
--- Name: django_content_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: grocery_user
+-- Name: django_content_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.django_content_type_id_seq', 14, true);
@@ -1286,7 +1286,7 @@ SELECT pg_catalog.setval('public.django_content_type_id_seq', 14, true);
 --
 -- TOC entry 3142 (class 0 OID 0)
 -- Dependencies: 228
--- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: grocery_user
+-- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.django_migrations_id_seq', 27, true);
@@ -1294,7 +1294,7 @@ SELECT pg_catalog.setval('public.django_migrations_id_seq', 27, true);
 
 --
 -- TOC entry 2862 (class 2606 OID 16504)
--- Name: api_guser api_guser_email_key; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_guser api_guser_email_key; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_guser
@@ -1303,7 +1303,7 @@ ALTER TABLE ONLY public.api_guser
 
 --
 -- TOC entry 2869 (class 2606 OID 16506)
--- Name: api_guser_groups api_guser_groups_guser_id_group_id_3aedc252_uniq; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_guser_groups api_guser_groups_guser_id_group_id_3aedc252_uniq; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_guser_groups
@@ -1312,7 +1312,7 @@ ALTER TABLE ONLY public.api_guser_groups
 
 --
 -- TOC entry 2871 (class 2606 OID 16508)
--- Name: api_guser_groups api_guser_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_guser_groups api_guser_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_guser_groups
@@ -1321,7 +1321,7 @@ ALTER TABLE ONLY public.api_guser_groups
 
 --
 -- TOC entry 2865 (class 2606 OID 16510)
--- Name: api_guser api_guser_pkey; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_guser api_guser_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_guser
@@ -1330,7 +1330,7 @@ ALTER TABLE ONLY public.api_guser
 
 --
 -- TOC entry 2874 (class 2606 OID 16512)
--- Name: api_guser_user_permissions api_guser_user_permissions_guser_id_permission_id_4389b78a_uniq; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_guser_user_permissions api_guser_user_permissions_guser_id_permission_id_4389b78a_uniq; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_guser_user_permissions
@@ -1339,7 +1339,7 @@ ALTER TABLE ONLY public.api_guser_user_permissions
 
 --
 -- TOC entry 2877 (class 2606 OID 16514)
--- Name: api_guser_user_permissions api_guser_user_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_guser_user_permissions api_guser_user_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_guser_user_permissions
@@ -1348,7 +1348,7 @@ ALTER TABLE ONLY public.api_guser_user_permissions
 
 --
 -- TOC entry 2879 (class 2606 OID 16516)
--- Name: api_household api_household_pkey; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_household api_household_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_household
@@ -1357,7 +1357,7 @@ ALTER TABLE ONLY public.api_household
 
 --
 -- TOC entry 2883 (class 2606 OID 16518)
--- Name: api_item api_item_pkey; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_item api_item_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_item
@@ -1366,7 +1366,7 @@ ALTER TABLE ONLY public.api_item
 
 --
 -- TOC entry 2886 (class 2606 OID 16520)
--- Name: api_list api_list_pkey; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_list api_list_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_list
@@ -1375,7 +1375,7 @@ ALTER TABLE ONLY public.api_list
 
 --
 -- TOC entry 2889 (class 2606 OID 16522)
--- Name: api_listsection api_listsection_pkey; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_listsection api_listsection_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_listsection
@@ -1384,7 +1384,7 @@ ALTER TABLE ONLY public.api_listsection
 
 --
 -- TOC entry 2893 (class 2606 OID 16524)
--- Name: api_measurement api_measurement_pkey; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_measurement api_measurement_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_measurement
@@ -1393,7 +1393,7 @@ ALTER TABLE ONLY public.api_measurement
 
 --
 -- TOC entry 2895 (class 2606 OID 16526)
--- Name: api_measurementfamily api_measurementfamily_pkey; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_measurementfamily api_measurementfamily_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_measurementfamily
@@ -1402,7 +1402,7 @@ ALTER TABLE ONLY public.api_measurementfamily
 
 --
 -- TOC entry 2898 (class 2606 OID 16528)
--- Name: api_recipe api_recipe_pkey; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_recipe api_recipe_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_recipe
@@ -1411,7 +1411,7 @@ ALTER TABLE ONLY public.api_recipe
 
 --
 -- TOC entry 2901 (class 2606 OID 16530)
--- Name: api_symbol api_symbol_pkey; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_symbol api_symbol_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_symbol
@@ -1420,7 +1420,7 @@ ALTER TABLE ONLY public.api_symbol
 
 --
 -- TOC entry 2904 (class 2606 OID 16532)
--- Name: auth_group auth_group_name_key; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: auth_group auth_group_name_key; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.auth_group
@@ -1429,7 +1429,7 @@ ALTER TABLE ONLY public.auth_group
 
 --
 -- TOC entry 2909 (class 2606 OID 16534)
--- Name: auth_group_permissions auth_group_permissions_group_id_permission_id_0cd325b0_uniq; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: auth_group_permissions auth_group_permissions_group_id_permission_id_0cd325b0_uniq; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.auth_group_permissions
@@ -1438,7 +1438,7 @@ ALTER TABLE ONLY public.auth_group_permissions
 
 --
 -- TOC entry 2912 (class 2606 OID 16536)
--- Name: auth_group_permissions auth_group_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: auth_group_permissions auth_group_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.auth_group_permissions
@@ -1447,7 +1447,7 @@ ALTER TABLE ONLY public.auth_group_permissions
 
 --
 -- TOC entry 2906 (class 2606 OID 16538)
--- Name: auth_group auth_group_pkey; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: auth_group auth_group_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.auth_group
@@ -1456,7 +1456,7 @@ ALTER TABLE ONLY public.auth_group
 
 --
 -- TOC entry 2915 (class 2606 OID 16540)
--- Name: auth_permission auth_permission_content_type_id_codename_01ab375a_uniq; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: auth_permission auth_permission_content_type_id_codename_01ab375a_uniq; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.auth_permission
@@ -1465,7 +1465,7 @@ ALTER TABLE ONLY public.auth_permission
 
 --
 -- TOC entry 2917 (class 2606 OID 16542)
--- Name: auth_permission auth_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: auth_permission auth_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.auth_permission
@@ -1474,7 +1474,7 @@ ALTER TABLE ONLY public.auth_permission
 
 --
 -- TOC entry 2920 (class 2606 OID 16544)
--- Name: django_admin_log django_admin_log_pkey; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: django_admin_log django_admin_log_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.django_admin_log
@@ -1483,7 +1483,7 @@ ALTER TABLE ONLY public.django_admin_log
 
 --
 -- TOC entry 2923 (class 2606 OID 16546)
--- Name: django_content_type django_content_type_app_label_model_76bd3d3b_uniq; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: django_content_type django_content_type_app_label_model_76bd3d3b_uniq; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.django_content_type
@@ -1492,7 +1492,7 @@ ALTER TABLE ONLY public.django_content_type
 
 --
 -- TOC entry 2925 (class 2606 OID 16548)
--- Name: django_content_type django_content_type_pkey; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: django_content_type django_content_type_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.django_content_type
@@ -1501,7 +1501,7 @@ ALTER TABLE ONLY public.django_content_type
 
 --
 -- TOC entry 2927 (class 2606 OID 16550)
--- Name: django_migrations django_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: django_migrations django_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.django_migrations
@@ -1510,7 +1510,7 @@ ALTER TABLE ONLY public.django_migrations
 
 --
 -- TOC entry 2930 (class 2606 OID 16552)
--- Name: django_session django_session_pkey; Type: CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: django_session django_session_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.django_session
@@ -1519,7 +1519,7 @@ ALTER TABLE ONLY public.django_session
 
 --
 -- TOC entry 2860 (class 1259 OID 16553)
--- Name: api_guser_email_21d97ba8_like; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: api_guser_email_21d97ba8_like; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX api_guser_email_21d97ba8_like ON public.api_guser USING btree (email varchar_pattern_ops);
@@ -1527,7 +1527,7 @@ CREATE INDEX api_guser_email_21d97ba8_like ON public.api_guser USING btree (emai
 
 --
 -- TOC entry 2866 (class 1259 OID 16554)
--- Name: api_guser_groups_group_id_692d4e9e; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: api_guser_groups_group_id_692d4e9e; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX api_guser_groups_group_id_692d4e9e ON public.api_guser_groups USING btree (group_id);
@@ -1535,7 +1535,7 @@ CREATE INDEX api_guser_groups_group_id_692d4e9e ON public.api_guser_groups USING
 
 --
 -- TOC entry 2867 (class 1259 OID 16555)
--- Name: api_guser_groups_guser_id_24b060b9; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: api_guser_groups_guser_id_24b060b9; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX api_guser_groups_guser_id_24b060b9 ON public.api_guser_groups USING btree (guser_id);
@@ -1543,7 +1543,7 @@ CREATE INDEX api_guser_groups_guser_id_24b060b9 ON public.api_guser_groups USING
 
 --
 -- TOC entry 2863 (class 1259 OID 16556)
--- Name: api_guser_household_id_f11b4345; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: api_guser_household_id_f11b4345; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX api_guser_household_id_f11b4345 ON public.api_guser USING btree (household_id);
@@ -1551,7 +1551,7 @@ CREATE INDEX api_guser_household_id_f11b4345 ON public.api_guser USING btree (ho
 
 --
 -- TOC entry 2872 (class 1259 OID 16557)
--- Name: api_guser_user_permissions_guser_id_74471646; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: api_guser_user_permissions_guser_id_74471646; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX api_guser_user_permissions_guser_id_74471646 ON public.api_guser_user_permissions USING btree (guser_id);
@@ -1559,7 +1559,7 @@ CREATE INDEX api_guser_user_permissions_guser_id_74471646 ON public.api_guser_us
 
 --
 -- TOC entry 2875 (class 1259 OID 16558)
--- Name: api_guser_user_permissions_permission_id_f6feac34; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: api_guser_user_permissions_permission_id_f6feac34; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX api_guser_user_permissions_permission_id_f6feac34 ON public.api_guser_user_permissions USING btree (permission_id);
@@ -1567,7 +1567,7 @@ CREATE INDEX api_guser_user_permissions_permission_id_f6feac34 ON public.api_gus
 
 --
 -- TOC entry 2880 (class 1259 OID 16559)
--- Name: api_item_list_id_1f8ead8d; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: api_item_list_id_1f8ead8d; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX api_item_list_id_1f8ead8d ON public.api_item USING btree (list_id);
@@ -1575,7 +1575,7 @@ CREATE INDEX api_item_list_id_1f8ead8d ON public.api_item USING btree (list_id);
 
 --
 -- TOC entry 2881 (class 1259 OID 16560)
--- Name: api_item_measurement_id_c2d47143; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: api_item_measurement_id_c2d47143; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX api_item_measurement_id_c2d47143 ON public.api_item USING btree (measurement_id);
@@ -1583,7 +1583,7 @@ CREATE INDEX api_item_measurement_id_c2d47143 ON public.api_item USING btree (me
 
 --
 -- TOC entry 2884 (class 1259 OID 16561)
--- Name: api_list_household_id_8777048e; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: api_list_household_id_8777048e; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX api_list_household_id_8777048e ON public.api_list USING btree (household_id);
@@ -1591,7 +1591,7 @@ CREATE INDEX api_list_household_id_8777048e ON public.api_list USING btree (hous
 
 --
 -- TOC entry 2887 (class 1259 OID 16562)
--- Name: api_listsection_list_id_651cac61; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: api_listsection_list_id_651cac61; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX api_listsection_list_id_651cac61 ON public.api_listsection USING btree (list_id);
@@ -1599,7 +1599,7 @@ CREATE INDEX api_listsection_list_id_651cac61 ON public.api_listsection USING bt
 
 --
 -- TOC entry 2890 (class 1259 OID 16563)
--- Name: api_listsection_recipe_id_b2391353; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: api_listsection_recipe_id_b2391353; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX api_listsection_recipe_id_b2391353 ON public.api_listsection USING btree (recipe_id);
@@ -1607,7 +1607,7 @@ CREATE INDEX api_listsection_recipe_id_b2391353 ON public.api_listsection USING 
 
 --
 -- TOC entry 2891 (class 1259 OID 16564)
--- Name: api_measurement_family_id_935b58eb; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: api_measurement_family_id_935b58eb; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX api_measurement_family_id_935b58eb ON public.api_measurement USING btree (family_id);
@@ -1615,7 +1615,7 @@ CREATE INDEX api_measurement_family_id_935b58eb ON public.api_measurement USING 
 
 --
 -- TOC entry 2896 (class 1259 OID 16565)
--- Name: api_recipe_household_id_88220392; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: api_recipe_household_id_88220392; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX api_recipe_household_id_88220392 ON public.api_recipe USING btree (household_id);
@@ -1623,7 +1623,7 @@ CREATE INDEX api_recipe_household_id_88220392 ON public.api_recipe USING btree (
 
 --
 -- TOC entry 2899 (class 1259 OID 16566)
--- Name: api_symbol_measurement_id_fa43d51e; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: api_symbol_measurement_id_fa43d51e; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX api_symbol_measurement_id_fa43d51e ON public.api_symbol USING btree (measurement_id);
@@ -1631,7 +1631,7 @@ CREATE INDEX api_symbol_measurement_id_fa43d51e ON public.api_symbol USING btree
 
 --
 -- TOC entry 2902 (class 1259 OID 16567)
--- Name: auth_group_name_a6ea08ec_like; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: auth_group_name_a6ea08ec_like; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX auth_group_name_a6ea08ec_like ON public.auth_group USING btree (name varchar_pattern_ops);
@@ -1639,7 +1639,7 @@ CREATE INDEX auth_group_name_a6ea08ec_like ON public.auth_group USING btree (nam
 
 --
 -- TOC entry 2907 (class 1259 OID 16568)
--- Name: auth_group_permissions_group_id_b120cbf9; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: auth_group_permissions_group_id_b120cbf9; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX auth_group_permissions_group_id_b120cbf9 ON public.auth_group_permissions USING btree (group_id);
@@ -1647,7 +1647,7 @@ CREATE INDEX auth_group_permissions_group_id_b120cbf9 ON public.auth_group_permi
 
 --
 -- TOC entry 2910 (class 1259 OID 16569)
--- Name: auth_group_permissions_permission_id_84c5c92e; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: auth_group_permissions_permission_id_84c5c92e; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX auth_group_permissions_permission_id_84c5c92e ON public.auth_group_permissions USING btree (permission_id);
@@ -1655,7 +1655,7 @@ CREATE INDEX auth_group_permissions_permission_id_84c5c92e ON public.auth_group_
 
 --
 -- TOC entry 2913 (class 1259 OID 16570)
--- Name: auth_permission_content_type_id_2f476e4b; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: auth_permission_content_type_id_2f476e4b; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX auth_permission_content_type_id_2f476e4b ON public.auth_permission USING btree (content_type_id);
@@ -1663,7 +1663,7 @@ CREATE INDEX auth_permission_content_type_id_2f476e4b ON public.auth_permission 
 
 --
 -- TOC entry 2918 (class 1259 OID 16571)
--- Name: django_admin_log_content_type_id_c4bce8eb; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: django_admin_log_content_type_id_c4bce8eb; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX django_admin_log_content_type_id_c4bce8eb ON public.django_admin_log USING btree (content_type_id);
@@ -1671,7 +1671,7 @@ CREATE INDEX django_admin_log_content_type_id_c4bce8eb ON public.django_admin_lo
 
 --
 -- TOC entry 2921 (class 1259 OID 16572)
--- Name: django_admin_log_user_id_c564eba6; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: django_admin_log_user_id_c564eba6; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX django_admin_log_user_id_c564eba6 ON public.django_admin_log USING btree (user_id);
@@ -1679,7 +1679,7 @@ CREATE INDEX django_admin_log_user_id_c564eba6 ON public.django_admin_log USING 
 
 --
 -- TOC entry 2928 (class 1259 OID 16573)
--- Name: django_session_expire_date_a5c62663; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: django_session_expire_date_a5c62663; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX django_session_expire_date_a5c62663 ON public.django_session USING btree (expire_date);
@@ -1687,7 +1687,7 @@ CREATE INDEX django_session_expire_date_a5c62663 ON public.django_session USING 
 
 --
 -- TOC entry 2931 (class 1259 OID 16574)
--- Name: django_session_session_key_c0390e0f_like; Type: INDEX; Schema: public; Owner: grocery_user
+-- Name: django_session_session_key_c0390e0f_like; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX django_session_session_key_c0390e0f_like ON public.django_session USING btree (session_key varchar_pattern_ops);
@@ -1695,7 +1695,7 @@ CREATE INDEX django_session_session_key_c0390e0f_like ON public.django_session U
 
 --
 -- TOC entry 2933 (class 2606 OID 16575)
--- Name: api_guser_groups api_guser_groups_group_id_692d4e9e_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_guser_groups api_guser_groups_group_id_692d4e9e_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_guser_groups
@@ -1704,7 +1704,7 @@ ALTER TABLE ONLY public.api_guser_groups
 
 --
 -- TOC entry 2934 (class 2606 OID 16580)
--- Name: api_guser_groups api_guser_groups_guser_id_24b060b9_fk_api_guser_id; Type: FK CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_guser_groups api_guser_groups_guser_id_24b060b9_fk_api_guser_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_guser_groups
@@ -1713,7 +1713,7 @@ ALTER TABLE ONLY public.api_guser_groups
 
 --
 -- TOC entry 2932 (class 2606 OID 16585)
--- Name: api_guser api_guser_household_id_f11b4345_fk_api_household_id; Type: FK CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_guser api_guser_household_id_f11b4345_fk_api_household_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_guser
@@ -1722,7 +1722,7 @@ ALTER TABLE ONLY public.api_guser
 
 --
 -- TOC entry 2935 (class 2606 OID 16590)
--- Name: api_guser_user_permissions api_guser_user_permi_permission_id_f6feac34_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_guser_user_permissions api_guser_user_permi_permission_id_f6feac34_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_guser_user_permissions
@@ -1731,7 +1731,7 @@ ALTER TABLE ONLY public.api_guser_user_permissions
 
 --
 -- TOC entry 2936 (class 2606 OID 16595)
--- Name: api_guser_user_permissions api_guser_user_permissions_guser_id_74471646_fk_api_guser_id; Type: FK CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_guser_user_permissions api_guser_user_permissions_guser_id_74471646_fk_api_guser_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_guser_user_permissions
@@ -1740,7 +1740,7 @@ ALTER TABLE ONLY public.api_guser_user_permissions
 
 --
 -- TOC entry 2937 (class 2606 OID 16600)
--- Name: api_item api_item_list_id_1f8ead8d_fk_api_list_id; Type: FK CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_item api_item_list_id_1f8ead8d_fk_api_list_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_item
@@ -1749,7 +1749,7 @@ ALTER TABLE ONLY public.api_item
 
 --
 -- TOC entry 2938 (class 2606 OID 16605)
--- Name: api_item api_item_measurement_id_c2d47143_fk_api_measurement_id; Type: FK CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_item api_item_measurement_id_c2d47143_fk_api_measurement_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_item
@@ -1758,7 +1758,7 @@ ALTER TABLE ONLY public.api_item
 
 --
 -- TOC entry 2939 (class 2606 OID 16610)
--- Name: api_list api_list_household_id_8777048e_fk_api_household_id; Type: FK CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_list api_list_household_id_8777048e_fk_api_household_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_list
@@ -1767,7 +1767,7 @@ ALTER TABLE ONLY public.api_list
 
 --
 -- TOC entry 2940 (class 2606 OID 16615)
--- Name: api_listsection api_listsection_list_id_651cac61_fk_api_list_id; Type: FK CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_listsection api_listsection_list_id_651cac61_fk_api_list_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_listsection
@@ -1776,7 +1776,7 @@ ALTER TABLE ONLY public.api_listsection
 
 --
 -- TOC entry 2941 (class 2606 OID 16620)
--- Name: api_listsection api_listsection_recipe_id_b2391353_fk_api_recipe_id; Type: FK CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_listsection api_listsection_recipe_id_b2391353_fk_api_recipe_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_listsection
@@ -1785,7 +1785,7 @@ ALTER TABLE ONLY public.api_listsection
 
 --
 -- TOC entry 2942 (class 2606 OID 16625)
--- Name: api_measurement api_measurement_family_id_935b58eb_fk_api_measurementfamily_id; Type: FK CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_measurement api_measurement_family_id_935b58eb_fk_api_measurementfamily_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_measurement
@@ -1794,7 +1794,7 @@ ALTER TABLE ONLY public.api_measurement
 
 --
 -- TOC entry 2943 (class 2606 OID 16630)
--- Name: api_recipe api_recipe_household_id_88220392_fk_api_household_id; Type: FK CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_recipe api_recipe_household_id_88220392_fk_api_household_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_recipe
@@ -1803,7 +1803,7 @@ ALTER TABLE ONLY public.api_recipe
 
 --
 -- TOC entry 2944 (class 2606 OID 16635)
--- Name: api_symbol api_symbol_measurement_id_fa43d51e_fk_api_measurement_id; Type: FK CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: api_symbol api_symbol_measurement_id_fa43d51e_fk_api_measurement_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.api_symbol
@@ -1812,7 +1812,7 @@ ALTER TABLE ONLY public.api_symbol
 
 --
 -- TOC entry 2945 (class 2606 OID 16640)
--- Name: auth_group_permissions auth_group_permissio_permission_id_84c5c92e_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: auth_group_permissions auth_group_permissio_permission_id_84c5c92e_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.auth_group_permissions
@@ -1821,7 +1821,7 @@ ALTER TABLE ONLY public.auth_group_permissions
 
 --
 -- TOC entry 2946 (class 2606 OID 16645)
--- Name: auth_group_permissions auth_group_permissions_group_id_b120cbf9_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: auth_group_permissions auth_group_permissions_group_id_b120cbf9_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.auth_group_permissions
@@ -1830,7 +1830,7 @@ ALTER TABLE ONLY public.auth_group_permissions
 
 --
 -- TOC entry 2947 (class 2606 OID 16650)
--- Name: auth_permission auth_permission_content_type_id_2f476e4b_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: auth_permission auth_permission_content_type_id_2f476e4b_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.auth_permission
@@ -1839,7 +1839,7 @@ ALTER TABLE ONLY public.auth_permission
 
 --
 -- TOC entry 2948 (class 2606 OID 16655)
--- Name: django_admin_log django_admin_log_content_type_id_c4bce8eb_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: django_admin_log django_admin_log_content_type_id_c4bce8eb_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.django_admin_log
@@ -1848,7 +1848,7 @@ ALTER TABLE ONLY public.django_admin_log
 
 --
 -- TOC entry 2949 (class 2606 OID 16660)
--- Name: django_admin_log django_admin_log_user_id_c564eba6_fk_api_guser_id; Type: FK CONSTRAINT; Schema: public; Owner: grocery_user
+-- Name: django_admin_log django_admin_log_user_id_c564eba6_fk_api_guser_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.django_admin_log

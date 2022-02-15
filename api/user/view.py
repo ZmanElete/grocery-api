@@ -12,8 +12,9 @@ class UserViewSet(ModelViewSet):
   def get_queryset(self):
     return User.objects.filter(id=self.request.user.id)
 
-  @action(detail=False, methods=['post'])
+  @action(detail=False, methods=['get',])
   def current(self, request):
+    self.kwargs["pk"] = request.user.id
     return super(UserViewSet, self).retrieve(request, pk=request.user.id)
 
   def delete(self, request):
