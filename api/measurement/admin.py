@@ -7,7 +7,7 @@ class MeasurementAdmin(nested_admin.NestedModelAdmin):
     'form',
     'family',
     'conversion',
-    'convertable',
+    'convertible',
     'is_fraction',
   )
   search_fields = (
@@ -16,7 +16,7 @@ class MeasurementAdmin(nested_admin.NestedModelAdmin):
   list_filter = (
     'family',
     'form',
-    'convertable',
+    'convertible',
     'is_fraction',
   )
   inlines = (

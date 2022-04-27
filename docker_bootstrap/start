@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ "$HOST_AUTOSTART" ]]; then
-    python manage.py migrate \
-    # && python manage.py loaddata phones
+    python manage.py migrate
 fi
 
 

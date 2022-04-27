@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=50)),
                 ('symbol', models.CharField(max_length=5)),
                 ('conversion', models.FloatField()),
-                ('convertable', models.BooleanField()),
+                ('convertible', models.BooleanField()),
                 ('is_fraction', models.BooleanField()),
             ],
             options={

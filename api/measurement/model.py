@@ -9,7 +9,7 @@ class Measurement(models.Model):
 
   title = models.CharField(max_length=50)
   conversion = models.FloatField()
-  convertable = models.BooleanField()
+  convertible = models.BooleanField()
   is_fraction = models.BooleanField()
   form = models.IntegerField(choices=Forms.choices)
   family = models.ForeignKey(MeasurementFamily, on_delete=models.SET_NULL, null=True)

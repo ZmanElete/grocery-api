@@ -1,4 +1,4 @@
-FROM python:3.8-buster
+FROM python:3.8
 
 # system environment
 ENV PYTHONUNBUFFERED=1 \
@@ -14,8 +14,8 @@ ENV PYTHONUNBUFFERED=1 \
 # install system dependencies
 RUN apt-get update \
     && apt-get install -y \
-        locales \
-        vim
+    locales \
+    vim
 
 RUN apt clean
 
@@ -34,9 +34,11 @@ RUN mkdir -p $PROJECT_ROOT/api/docker_bootstrap \
 RUN ( \
     export SHELL='/bin/bash' \
     && echo 'alias ll="ls -alF"' >> ~/.bashrc \
-)
+    )
+
+RUN echo 'history -s "./manage.py migrate"' >> ~/.bashrc
+RUN echo 'history -s "./manage.py runserver 0:8000"' >> ~/.bashrc
 
 WORKDIR /opt/app/api
-COPY docker_bootstrap docker_bootstrap
 
 ENTRYPOINT docker_bootstrap/mkvirtualenv && docker_bootstrap/start

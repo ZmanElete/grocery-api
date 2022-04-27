@@ -26,7 +26,8 @@ SECRET_KEY = env.get('SECRET_KEY', 'ryl+#+lkbca-kz3izc(2(^!tgo)v0k2dy-#yxc1kdd@x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.get('DJANGO_DEBUG', 'false') == 'true'
 
-ALLOWED_HOSTS = env.get('DJANGO_ALLOWED_HOST', 'localhost').split(',')
+ALLOWED_HOSTS = env.get('ALLOWED_HOSTS', 'localhost').split(',')
+print(env)
 
 
 # Application definition

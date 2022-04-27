@@ -301,7 +301,7 @@ CREATE TABLE public.api_measurement (
     id integer NOT NULL,
     title character varying(50) NOT NULL,
     conversion double precision NOT NULL,
-    convertable boolean NOT NULL,
+    convertible boolean NOT NULL,
     is_fraction boolean NOT NULL,
     form integer NOT NULL,
     family_id integer
