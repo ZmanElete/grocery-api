@@ -1,6 +1,5 @@
 version: '3'
 
-
 services:
   db:
     image: postgres
@@ -8,9 +7,9 @@ services:
     restart: unless-stopped
 
     environment:
-        POSTGRES_DB: ${POSTGRES_DB}
-        POSTGRES_USER: ${POSTGRES_USER}
-        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
     ports:
       - "${HOST_DB_BINDING:-5432}:5432"
@@ -21,7 +20,6 @@ services:
 
       # Database initialized from database dumps
       - ./database-init:/docker-entrypoint-initdb.d/:ro
-
 
   api:
     image: api:latest
@@ -38,7 +36,7 @@ services:
     volumes:
       - ./:/opt/app/api
       - ../images:/opt/app/images
-      - venv_py38:/opt/app/api_py38
+      - venv_py39:/opt/app/api_py38
 
     ports:
       - "${HOST_API_BINDING:-8300}:8000"
@@ -55,7 +53,6 @@ services:
 
     tty: true
 
-
 volumes:
-    rdb:
-    venv_py38:
+  rdb:
+  venv_py39:

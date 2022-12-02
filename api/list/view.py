@@ -1,27 +1,33 @@
-from rest_framework.viewsets import ModelViewSet
+from rest_framework import viewsets, mixins
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.decorators import action
-from .serializer import ListSerializer
+
+from api.utils.household_viewset_utils import PreventCrossHouseholdUpdates
+from .serializer import CreateListSerializer, ListDetailSerializer, ListSerializer
 from .model import List
 from rest_framework.response import Response
 
-class ListViewSet(ModelViewSet):
-  serializer_class = ListSerializer
+from api import filters
 
-  def get_queryset(self):
-    return List.objects.filter(household=self.request.user.household)
+class ListViewSet(
+  viewsets.GenericViewSet,
+  mixins.ListModelMixin,
+  mixins.UpdateModelMixin,
+  mixins.CreateModelMixin,
+  PreventCrossHouseholdUpdates,
+):
+  queryset = List.objects.all()
+  filterset_fields = ['active', 'referenceable']
+  filter_backends = [filters.CurrentHouseholdFilterBackend, DjangoFilterBackend,]
 
-  @action(detail=False, methods=['post'])
-  def filtered_list(self, request):
-    user = request.user
-
-    filters = {
-      "household": user.household,
-    }
-    if request.data.get('active', None) != None:
-      filters['active'] = request.data.get('active')
-    if request.data.get('referenceable', None) != None:
-      filters['referenceable'] = request.data.get('referenceable')
-    lists = List.objects.filter(**filters)
-    serializer = serializer_class(lists, many=True)
-    return Response(serializer.data)
-
+  def get_serializer_class(self):
+    if self.action in ['create']:
+      # Create in one bulk create.
+      # It is not possible to create an item without a list.
+      return CreateListSerializer
+    elif self.action in ['update', 'partial_update', 'delete']:
+      # User a more simple serializer for update/partial_update/delete,
+      # don't allow updating children from the parent
+      return ListSerializer
+    # Default is to serializer all the way down to give all the data.
+    return ListDetailSerializer

@@ -8,7 +8,7 @@
       "name": "Python: Remote Attach",
       "type": "python",
       "request": "attach",
-      "port": 3300,
+      "port": 3323,
       "host": "localhost",
       "pathMappings": [
         {

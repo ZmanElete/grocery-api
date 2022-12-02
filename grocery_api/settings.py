@@ -155,3 +155,5 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': True,
     'AUTH_HEADER_TYPES': ('JWT',),
 }
+
+DEFAULT_AUTO_FIELD="django.db.models.BigAutoField"

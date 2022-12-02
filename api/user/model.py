@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext as _
 
 from api.user.manager import GUserManager
 
@@ -15,5 +15,5 @@ class GUser(AbstractUser):
 
   objects = GUserManager()
 
-  def __str__(self):
-    return self.email
+  # def __str__(self):
+  #   return self.email

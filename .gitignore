@@ -16,3 +16,4 @@ build/
 tests/report/
 vscode/
 data/
+venv

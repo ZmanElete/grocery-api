@@ -963,6 +963,7 @@ INSERT INTO public.api_symbol VALUES (19, 'mL', 14);
 INSERT INTO public.api_symbol VALUES (20, 'oz', 15);
 INSERT INTO public.api_symbol VALUES (21, 'g', 16);
 INSERT INTO public.api_symbol VALUES (22, 'kg', 17);
+INSERT INTO public.api_symbol VALUES (23, '', 18);
 
 
 --
