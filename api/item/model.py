@@ -6,6 +6,7 @@ class Item(models.Model):
   measurement = models.ForeignKey('Measurement', on_delete=models.CASCADE)
   quantity = models.FloatField()#might be easier as a string field. Not sure XD
   checked = models.BooleanField(default=False)
+  #Special Instructions?
 
   def __str__(self):
     #TODO make quantity show as a fraction

@@ -1,6 +1,13 @@
 
 from django.db import models
 
+
+# NOT SURE WHY THIS EXISTS
+# I AM GUESSING (YEARS LATER) THAT THIS COULD
+# POSSIBLY BE SO YOU CAN MARK OFF THE THINGS YOU HAVE MADE
+# AND IT CAN HELP TRACK WHATS IN YOUR PANTRY.
+# FOR NOW, WE ARE NOT GOING TO WORRY ABOUT IT.
+
 class ListSection(models.Model):
   title = models.CharField
   recipe = models.ForeignKey('Recipe', on_delete=models.CASCADE)

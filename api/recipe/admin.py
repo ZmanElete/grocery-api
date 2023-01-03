@@ -1,6 +1,6 @@
 import nested_admin
 
-from api.list_section.admin import ListSectionInline
+# from api.list_section.admin import ListSectionInline
 from .model import Recipe
 
 class RecipeAdmin(nested_admin.NestedModelAdmin):
@@ -16,7 +16,8 @@ class RecipeAdmin(nested_admin.NestedModelAdmin):
   )
   raw_id_fields = (
     'household',
+    'list',
   )
-  inlines = (
-    ListSectionInline,
-  )
+  # inlines = (
+  #   ListSectionInline,
+  # )

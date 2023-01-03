@@ -5,6 +5,7 @@ class Recipe(models.Model):
   household = models.ForeignKey('Household', on_delete=models.CASCADE)
   instructions = models.TextField()
   standard_serving = models.IntegerField()
+  list = models.ForeignKey('List', on_delete=models.CASCADE)
 
   def __str__(self):
     return f'{self.id} - {self.title}'
