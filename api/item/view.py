@@ -8,6 +8,8 @@ class ItemViewSet(
   viewsets.GenericViewSet,
   mixins.UpdateModelMixin,
   mixins.RetrieveModelMixin,
+  mixins.DestroyModelMixin,
+  mixins.CreateModelMixin,
   PreventCrossHouseholdUpdates
 ):
   queryset = Item.objects.all()

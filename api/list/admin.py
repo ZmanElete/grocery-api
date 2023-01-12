@@ -2,6 +2,7 @@ from .model import List
 from api.item.admin import ItemInline
 import nested_admin
 
+
 class ListAdmin(nested_admin.NestedModelAdmin):
   list_display = (
     'title',

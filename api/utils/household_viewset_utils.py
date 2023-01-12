@@ -1,5 +1,7 @@
 from rest_framework.fields import empty
 
+from api.utils.act_on_keys import actOnKeys, createAddValueAct, deleteItem
+
 class PreventCrossHouseholdUpdates():
   '''
   Overrides [get_queryset] and [get_serializer] to remove loopholes for updating a household for the object.
@@ -13,6 +15,9 @@ class PreventCrossHouseholdUpdates():
   '''
 
   household_key = 'household'
+  household_in_object = {
+    'household': True,
+  }
 
   def get_queryset(self):
     queryset = self.queryset
@@ -23,8 +28,7 @@ class PreventCrossHouseholdUpdates():
   def get_serializer(self, instance=None, data=empty, *args, **kwargs):
     if self.action == 'create' or self.action == 'update':
       # If household is on the object. Override household with the users household
-      data['household'] = self.request.user.household.id
+      actOnKeys(data, self.household_in_object, createAddValueAct(self.request.user.household.id))
     elif self.action == 'partial_update' and "household" in data.keys():
-      # Remove household as a key
-      del data['household']
+      actOnKeys(data, self.household_in_object, deleteItem)
     return super().get_serializer(instance=instance, data=data, *args,  **kwargs)

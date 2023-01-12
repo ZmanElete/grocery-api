@@ -13,9 +13,9 @@ class CurrentHouseholdFilterBackend(filters.BaseFilterBackend):
   def filter_queryset(self, request, queryset, view):
     user = request.user
     current_household = request.query_params.get('current_household', None)
+    q = Q(household=user.household)
     if current_household != None:
-      q = Q(household=user.household)
       if current_household == 'false':
         q = ~q
-      queryset = queryset.filter(q)
+    queryset = queryset.filter(q)
     return queryset

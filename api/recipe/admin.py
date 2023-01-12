@@ -18,6 +18,3 @@ class RecipeAdmin(nested_admin.NestedModelAdmin):
     'household',
     'list',
   )
-  # inlines = (
-  #   ListSectionInline,
-  # )

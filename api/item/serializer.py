@@ -17,8 +17,7 @@ class ItemDetailSerializer(serializers.ModelSerializer):
 class CreateItemSerializer(serializers.ModelSerializer):
   class Meta:
     model = Item
-    # We exclude list so that we don't get errors when it does not exist on a new item.
-    exclude = ('list',)
+    exclude = ['list',]
 
 
 

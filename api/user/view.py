@@ -1,12 +1,15 @@
 from django.contrib.auth import get_user_model
+from rest_framework import mixins
 from rest_framework.decorators import action
-from rest_framework.viewsets import ModelViewSet
+from rest_framework.viewsets import GenericViewSet
 from rest_framework.exceptions import PermissionDenied
 
 from .serializer import UserSerializer
 User = get_user_model()
 
-class UserViewSet(ModelViewSet):
+class UserViewSet(mixins.DestroyModelMixin,
+                  mixins.RetrieveModelMixin,
+                  GenericViewSet):
   serializer_class = UserSerializer
 
   def get_queryset(self):
