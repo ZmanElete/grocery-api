@@ -6,6 +6,8 @@ class Item(models.Model):
   measurement = models.ForeignKey('Measurement', on_delete=models.CASCADE)
   quantity = models.FloatField()#might be easier as a string field. Not sure XD
   checked = models.BooleanField(default=False)
+  ingredient = models.ForeignKey('Ingredient', on_delete=models.SET_NULL, null=True, blank=True)
+  tags = models.ManyToManyField('Tag')
   #Special Instructions?
 
   def __str__(self):
