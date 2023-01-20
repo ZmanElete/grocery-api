@@ -27,6 +27,9 @@ class RecipeViewSet(
     'list': {
       'household': True,
     },
+    'tags': [
+      { 'household': True, }
+    ]
   }
 
   def get_serializer_class(self):

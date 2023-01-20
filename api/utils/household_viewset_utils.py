@@ -17,6 +17,9 @@ class PreventCrossHouseholdUpdates():
   household_key = 'household'
   household_in_object = {
     'household': True,
+    'tags': [
+      { 'household': True, }
+    ]
   }
 
   def get_queryset(self):

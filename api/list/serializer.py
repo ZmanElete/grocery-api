@@ -1,15 +1,17 @@
 from rest_framework.serializers import ModelSerializer
 from api.item.model import Item
 from api.item.serializer import CreateItemSerializer, ItemDetailSerializer
+from api.tag.serializer import TagsMixin
+from api.utils.read_only_serializer import ReadOnlyModelSerializer
 from .model import List
 
-class ListSerializer(ModelSerializer):
+class ListSerializer(TagsMixin, ModelSerializer):
   class Meta:
     model = List
     fields = "__all__"
 
 
-class ListDetailSerializer(ModelSerializer):
+class ListDetailSerializer(TagsMixin, ReadOnlyModelSerializer, ModelSerializer):
   item_set = ItemDetailSerializer(many=True)
 
   class Meta:
@@ -17,7 +19,7 @@ class ListDetailSerializer(ModelSerializer):
     fields = "__all__"
 
 
-class CreateListSerializer(ModelSerializer):
+class CreateListSerializer(TagsMixin, ModelSerializer):
   item_set = CreateItemSerializer(many=True)
 
   class Meta:
@@ -26,6 +28,6 @@ class CreateListSerializer(ModelSerializer):
 
   def create(self, validated_data):
     item_set = validated_data.pop('item_set')
-    list = List.objects.create(**validated_data)
+    list = super().create(validated_data)
     [ Item.objects.create(list=list, **item) for item in item_set ]
     return list

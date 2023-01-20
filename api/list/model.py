@@ -6,6 +6,7 @@ class List(models.Model):
   household = models.ForeignKey('Household', on_delete=models.CASCADE)
   active = models.BooleanField(default=True)
   referenceable = models.BooleanField(default=True)
+  tags = models.ManyToManyField('Tag')
 
   def __str__(self):
     return f'{self.id} - {self.title}'

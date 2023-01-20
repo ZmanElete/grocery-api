@@ -9,7 +9,6 @@ class CurrentHouseholdFilterBackend(filters.BaseFilterBackend):
   '''
   Add current_household=false to remove the household filtering.
   '''
-
   def filter_queryset(self, request, queryset, view):
     user = request.user
     current_household = request.query_params.get('current_household', None)

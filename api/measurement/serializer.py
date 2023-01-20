@@ -1,10 +1,12 @@
 from rest_framework import serializers
 
-from .model import Measurement
 from api.measurement_family.serializer import MeasurementFamilySerializer
 from api.symbol.serializer import SymbolSerializer
+from api.utils.read_only_serializer import ReadOnlyModelSerializer
 
-class MeasurementSerializer(serializers.ModelSerializer):
+from .model import Measurement
+
+class MeasurementSerializer(ReadOnlyModelSerializer, serializers.ModelSerializer):
   family = MeasurementFamilySerializer()
   symbol_set = SymbolSerializer(many=True)
   class Meta:

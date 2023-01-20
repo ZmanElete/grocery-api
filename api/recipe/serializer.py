@@ -1,14 +1,15 @@
 from rest_framework.serializers import ModelSerializer
-from api.list.model import List
 from api.list.serializer import CreateListSerializer, ListDetailSerializer
 from api.recipe.model import Recipe
+from api.tag.serializer import TagsMixin
+from api.utils.read_only_serializer import ReadOnlyModelSerializer
 
-class UpdateRecipeSerializer(ModelSerializer):
+class UpdateRecipeSerializer(TagsMixin, ModelSerializer):
   class Meta:
     model = Recipe
     exclude = ("list",)
 
-class RecipeDetailSerializer(ModelSerializer):
+class RecipeDetailSerializer(TagsMixin, ReadOnlyModelSerializer, ModelSerializer):
   list = ListDetailSerializer(many=False)
 
   class Meta:
@@ -16,7 +17,7 @@ class RecipeDetailSerializer(ModelSerializer):
     fields = "__all__"
 
 
-class CreateRecipeSerializer(ModelSerializer):
+class CreateRecipeSerializer(TagsMixin, ModelSerializer):
   list = CreateListSerializer()
 
   class Meta:

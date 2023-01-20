@@ -14,6 +14,8 @@ router.register('user', views.UserViewSet, basename='user')
 router.register('measurement', views.MeasurementViewset, basename='measurement')
 router.register('item', views.ItemViewSet, basename='item')
 router.register('recipe', views.RecipeViewSet, basename='recipe')
+router.register('tag', views.TagViewSet, basename='tag')
+router.register('ingredient', views.IngredientViewSet, basename='ingredient')
 
 urlpatterns = [
   # Rest SimpleJWT endpoints
