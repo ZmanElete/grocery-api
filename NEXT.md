@@ -4,7 +4,7 @@
   - Organize Lists by item tags
   - Makes tags linked to households as well, so that anyone creates like item types.
   - Make Items Orderable
-  # Add Tags to Recipe/Lists
+  - Add Tags to Recipe/Lists
 
 # Merge Lists
   - Merge other lists together

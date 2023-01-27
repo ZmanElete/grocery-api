@@ -8,6 +8,7 @@ class Item(models.Model):
   checked = models.BooleanField(default=False)
   ingredient = models.ForeignKey('Ingredient', on_delete=models.SET_NULL, null=True, blank=True)
   tags = models.ManyToManyField('Tag')
+  sequence = models.IntegerField()
   #Special Instructions?
 
   def __str__(self):

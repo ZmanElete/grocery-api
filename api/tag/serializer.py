@@ -33,19 +33,21 @@ class TagsMixin():
   def create(self, validated_data):
     tags_data = validated_data.pop('tags', [])
     instance = super().create(validated_data)
-    tags = [ Tag.objects.get_or_create(**tag)[0] for tag in tags_data ]
+    type_name = self.Meta.model.__name__
+    tags = [ Tag.objects.get_or_create(**tag, on_type=type_name)[0] for tag in tags_data ]
     instance.tags.set(tags)
     return instance
 
   def update(self, instance, validated_data):
     validated_data.pop('id', None)
     tags_data = validated_data.pop('tags', [])
+    type_name = self.Meta.model.__name__
     instance = super().update(instance, validated_data)
 
     tags = []
     for tag_data in tags_data:
       tag_data.pop('id', None)
-      tags.append(Tag.objects.get_or_create(**tag_data)[0])
+      tags.append(Tag.objects.get_or_create(**tag_data, on_type=type_name)[0])
 
     instance.tags.set(tags)
     return instance

@@ -15,7 +15,7 @@ __all__ = [
   'CreateIngredientSerializer'
 ]
 
-class IngredientDetailSerializer(TagsMixin, ReadOnlyModelSerializer):
+class IngredientDetailSerializer(TagsMixin, ReadOnlyModelSerializer, serializers.ModelSerializer):
   tags = TagSerializer(many=True)
   purchasing_measurement = MeasurementSerializer(many=False)
 

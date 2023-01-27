@@ -18,7 +18,6 @@ class TagViewSet(
   PreventCrossHouseholdUpdates,
   viewsets.GenericViewSet,
   mixins.ListModelMixin,
-  mixins.CreateModelMixin,
   mixins.DestroyModelMixin,
 ):
   queryset = Tag.objects.all()
