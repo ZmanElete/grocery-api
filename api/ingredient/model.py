@@ -4,7 +4,7 @@ class Ingredient(models.Model):
   title = models.CharField(max_length=50)
   household = models.ForeignKey('Household', on_delete=models.CASCADE)
 
-  purchasing_quantity = models.FloatField()
+  purchasing_quantity = models.FloatField(blank=True, null=True)
   purchasing_measurement = models.ForeignKey('Measurement', on_delete=models.CASCADE)
 
   tags = models.ManyToManyField('Tag')

@@ -1,4 +1,4 @@
-from rest_framework import viewsets, mixins
+from rest_framework import viewsets, mixins, filters
 from django_filters.rest_framework import DjangoFilterBackend
 
 from api.utils.household_viewset_utils import PreventCrossHouseholdUpdates
@@ -8,7 +8,7 @@ from .serializer import  (
 )
 from .model import Ingredient
 
-from api import filters
+from api.filters import CurrentHouseholdFilterBackend
 
 __all__ = [
   'IngredientViewSet'
@@ -24,8 +24,8 @@ class IngredientViewSet(
   mixins.UpdateModelMixin
 ):
   queryset = Ingredient.objects.all()
-  # filterset_fields = ['active', 'referenceable']
-  filter_backends = [filters.CurrentHouseholdFilterBackend, DjangoFilterBackend,]
+  filter_backends = [CurrentHouseholdFilterBackend, filters.SearchFilter,]
+  search_fields = ["title", ]
 
   def get_serializer_class(self):
     if self.action in ['create', 'update', 'partial_update', 'delete']:

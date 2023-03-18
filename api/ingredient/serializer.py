@@ -2,7 +2,6 @@ from rest_framework import serializers
 from api.measurement.serializer import MeasurementSerializer
 from api.tag.serializer import (
   TagSerializer,
-  CreateTagSerializer,
   TagsMixin,
 )
 from api.tag.model import Tag
@@ -15,7 +14,7 @@ __all__ = [
   'CreateIngredientSerializer'
 ]
 
-class IngredientDetailSerializer(TagsMixin, ReadOnlyModelSerializer, serializers.ModelSerializer):
+class IngredientDetailSerializer(ReadOnlyModelSerializer, serializers.ModelSerializer):
   tags = TagSerializer(many=True)
   purchasing_measurement = MeasurementSerializer(many=False)
 
