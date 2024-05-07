@@ -24,7 +24,7 @@ AUTH_USER_MODEL = 'api.GUser'
 SECRET_KEY = env.get('SECRET_KEY', 'ryl+#+lkbca-kz3izc(2(^!tgo)v0k2dy-#yxc1kdd@x%yx+^c')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.get('DJANGO_DEBUG', 'false') == 'true'
+DEBUG = env.get('DEBUG', 'false') == 'true'
 
 ALLOWED_HOSTS = env.get('ALLOWED_HOSTS', 'localhost').split(',')
 print(env)

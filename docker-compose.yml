@@ -1,58 +1,37 @@
-version: '3'
-
 services:
-  db:
-    image: postgres
-
-    restart: unless-stopped
-
-    environment:
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-
-    ports:
-      - "${HOST_DB_BINDING:-5432}:5432"
-
-    volumes:
-      # Persist database state between docker sessions/builds
-      - rdb:/var/lib/postgresql/data
-
-      # Database initialized from database dumps
-      - ./database-init:/docker-entrypoint-initdb.d/:ro
-
   api:
-    image: api:latest
-
     build:
       context: .
-
-    # command:
-    #     docker_bootstrap/start
-
-    # entrypoint: bash
-    env_file: .env
-
-    volumes:
-      - ./:/opt/app/api
-      - ../images:/opt/app/images
-      - venv_py39:/opt/app/api_py38
-
-    ports:
-      - "${HOST_API_BINDING:-8300}:8000"
-      - "${HOST_DEBUGGER_BINDING}:3000"
-
+    restart: unless-stopped
     depends_on:
       - db
-
-    # seeding does not allow the entrypoint to complete, so the build fails, restart will make sure it tries again to
-    # connect.
-    restart: unless-stopped
-
+    env_file: .env
+    ports:
+      - ${PUBLIC_API_PORT}:8000
+      - ${PUBLIC_DEBUG_BINDING}:3000
     stdin_open: true
-
     tty: true
+    volumes:
+      - .:/app/
+      - venv:/app/.venv
+
+
+  db:
+    image: postgres:14.2
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASS}
+      POSTGRES_DB: ${POSTGRES_NAME}
+    ports:
+      - ${PUBLIC_POSTGRES_PORT}:${POSTGRES_PORT:-5432}
+    volumes:
+      # Persist database state between docker sessions/builds
+      - db_volume:/var/lib/postgresql/data
+
 
 volumes:
-  rdb:
-  venv_py39:
+  db_volume:
+  venv:
+
+
