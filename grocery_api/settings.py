@@ -84,11 +84,11 @@ WSGI_APPLICATION = 'grocery_api.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':   'django.db.backends.postgresql',
-        'HOST':     env.get('RW_DB_HOST')     or env.get('DB_HOST') or 'db',
-        'PORT':     env.get('RW_DB_PORT')     or 5432,
-        'USER':     env.get('RW_DB_USER')     or env.get('POSTGRES_USER'),
-        'PASSWORD': env.get('RW_DB_PASSWORD') or env.get('POSTGRES_PASSWORD'),
-        'NAME':     env.get('RW_DB_NAME')     or env.get('POSTGRES_DB'),
+        'HOST':     env.get('POSTGRES_HOST') or 'db',
+        'PORT':     env.get('POSTGRES_PORT') or 5432,
+        'NAME':     env.get('POSTGRES_DB'),
+        'USER':     env.get('POSTGRES_USER'),
+        'PASSWORD': env.get('POSTGRES_PASSWORD'),
     }
 }
 

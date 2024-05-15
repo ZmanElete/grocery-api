@@ -1,6 +1,6 @@
 #!/bin/bash
 
-poetry install "poetry==$POETRY_VERSION"
+poetry install
 
 python docker/wait_for_db_ready.py
 

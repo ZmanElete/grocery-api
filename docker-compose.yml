@@ -20,9 +20,9 @@ services:
     image: postgres:14.2
     restart: unless-stopped
     environment:
+      POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASS}
-      POSTGRES_DB: ${POSTGRES_NAME}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - ${PUBLIC_POSTGRES_PORT}:${POSTGRES_PORT:-5432}
     volumes:

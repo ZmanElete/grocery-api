@@ -3,11 +3,11 @@ import psycopg2
 import time
 
 env = os.environ
-host = env.get('POSTGRES_HOST')
-db = env.get('POSTGRES_NAME')
+host = env.get('POSTGRES_HOST', 'db')
+db = env.get('POSTGRES_DB')
 user = env.get('POSTGRES_USER')
-pw = env.get('POSTGRES_PASS')
-port = env.get('POSTGRES_PORT')
+pw = env.get('POSTGRES_PASSWORD')
+port = env.get('POSTGRES_PORT', 5432)
 
 if host and db and user and pw:
     while True:
