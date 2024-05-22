@@ -2,7 +2,7 @@ services:
   api:
     build:
       context: .
-    restart: unless-stopped
+    restart: on-failure
     depends_on:
       - db
     env_file: .env
@@ -18,7 +18,7 @@ services:
 
   db:
     image: postgres:14.2
-    restart: unless-stopped
+    restart: on-failure
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
@@ -28,6 +28,8 @@ services:
     volumes:
       # Persist database state between docker sessions/builds
       - db_volume:/var/lib/postgresql/data
+      # Database initialized from database dumps
+      - ./database-init:/docker-entrypoint-initdb.d/:ro
 
 
 volumes:
